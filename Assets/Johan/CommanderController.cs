@@ -16,12 +16,6 @@ public class CommanderController : MonoBehaviour
 
     public TileBase tileSelector;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -53,6 +47,10 @@ public class CommanderController : MonoBehaviour
             tileSelecting.SetTile(lastTileLoc, null);
         }
         //End Tile highlighting code
+        if (Input.GetMouseButtonDown(0))
+        {
+            //SpawnPlant(tilePointer, plant)
+        }
     }
 }
 public enum HoverState
