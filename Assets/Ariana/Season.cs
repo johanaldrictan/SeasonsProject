@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Diagnostics;
+
+public class Season : MonoBehaviour
+{
+    // Start is called before the first frame update
+    string season;
+
+    Stopwatch timer;
+    public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
+
+    public int seasonLen;
+    string [] seasons = new string[4] {"Spring", "Summer", "Fall", "Winter"};
+    void Start() //sets the season, starts the stopwatch
+    {
+        this.season = this.seasons[this.seasonNo];
+        this.timer = new Stopwatch();
+        timer.Start();
+    }
+
+    // Update is called once per frame
+    void Update() //when the timer exceeds or gets to the season length, it cycles
+                  //out the season
+    {
+        //UnityEngine.Debug.Log(timer.Elapsed);
+        if (timer.Elapsed.Seconds>=this.seasonLen)
+        {
+            timer.Reset();
+            this.nextSeason();
+            timer.Start();
+        }
+        //UnityEngine.Debug.Log(this.season);
+    }
+
+    void nextSeason() //cycles to the next season
+    {
+        if (this.seasonNo==3)
+            this.seasonNo = 0;
+        else
+            ++this.seasonNo;
+        this.season = this.seasons[this.seasonNo];
+    }
+}
