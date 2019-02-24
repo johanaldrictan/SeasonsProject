@@ -11,6 +11,7 @@ public class Plant : MonoBehaviour
     private float shootTickValue = 0f;  //value for tracking time between shots
     private float shootTickRate = 1f;
 
+    public Enemy bug;
     void Update()
     {
         TimeToLive -= Time.deltaTime;
@@ -26,5 +27,13 @@ public class Plant : MonoBehaviour
     void Shoot()
     {
         //instatiate a bullet at the plant's current location
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Enemy")
+        {
+            Health = Health - bug.GetDmg();
+        }
     }
 }
