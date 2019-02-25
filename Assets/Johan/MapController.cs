@@ -10,7 +10,7 @@ public class MapController : MonoBehaviour
     public Tilemap plantableTiles;
 
     //lists all of the plants currently in the map. opted for dictionary to make system independent since the planting field will not necessarily be square
-    Dictionary<Vector3Int, Plant> plantDictionary;
+    public Dictionary<Vector3Int, Plant> plantDictionary;
 
     private void Awake()
     {

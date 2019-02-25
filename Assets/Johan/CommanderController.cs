@@ -16,6 +16,8 @@ public class CommanderController : MonoBehaviour
 
     public TileBase tileSelector;
 
+    public Plant plantPrefab;
+
     // Update is called once per frame
     void Update()
     {
@@ -49,7 +51,8 @@ public class CommanderController : MonoBehaviour
         //End Tile highlighting code
         if (Input.GetMouseButtonDown(0))
         {
-            //SpawnPlant(tilePointer, plant)
+            Plant p = (Plant)Instantiate(plantPrefab, MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
+            MapController.instance.plantDictionary.Add(tilePointer, p);
         }
     }
 }
