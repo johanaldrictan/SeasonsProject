@@ -9,11 +9,8 @@ public class MapController : MonoBehaviour
     public Grid grid;
     public Tilemap plantableTiles;
 
-    //2D grid. value is the weight of the tile
-    public int[,] map;
-
-    public int mapWidth;
-    public int mapHeight;
+    //lists all of the plants currently in the map. opted for dictionary to make system independent since the planting field will not necessarily be square
+    public Dictionary<Vector3Int, Plant> plantDictionary;
 
     private void Awake()
     {
@@ -24,11 +21,8 @@ public class MapController : MonoBehaviour
             instance = this;
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        plantDictionary = new Dictionary<Vector3Int, Plant>();
     }
-
 }

@@ -16,11 +16,7 @@ public class CommanderController : MonoBehaviour
 
     public TileBase tileSelector;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public Plant plantPrefab;
 
     // Update is called once per frame
     void Update()
@@ -53,6 +49,11 @@ public class CommanderController : MonoBehaviour
             tileSelecting.SetTile(lastTileLoc, null);
         }
         //End Tile highlighting code
+        if (Input.GetMouseButtonDown(0))
+        {
+            Plant p = (Plant)Instantiate(plantPrefab, MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
+            MapController.instance.plantDictionary.Add(tilePointer, p);
+        }
     }
 }
 public enum HoverState
