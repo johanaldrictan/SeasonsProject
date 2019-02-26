@@ -51,4 +51,9 @@ public class Plant : MonoBehaviour
             Health = Health - bug.GetDmg();
         }
     }
+
+    public int GetDmg()
+    {
+        return Damage;
+    }
 }

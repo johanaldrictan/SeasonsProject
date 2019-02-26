@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32cc82f92ad0846b570a8690f1d61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletPrefab: {fileID: 8196635277680198418, guid: 277fcb290fca16849a6d79c16a9e38a1,
+    type: 3}
   bug: {fileID: 7729787670809138356}
 --- !u!50 &76571236
 Rigidbody2D:
@@ -252,6 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32cc82f92ad0846b570a8690f1d61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletPrefab: {fileID: 8196635277680198418, guid: 277fcb290fca16849a6d79c16a9e38a1,
+    type: 3}
   bug: {fileID: 7729787670809138356}
 --- !u!50 &190758752
 Rigidbody2D:
@@ -292,6 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32cc82f92ad0846b570a8690f1d61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletPrefab: {fileID: 8196635277680198418, guid: 277fcb290fca16849a6d79c16a9e38a1,
+    type: 3}
   bug: {fileID: 7729787670809138356}
 --- !u!50 &632924723
 Rigidbody2D:
@@ -332,6 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a32cc82f92ad0846b570a8690f1d61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletPrefab: {fileID: 8196635277680198418, guid: 277fcb290fca16849a6d79c16a9e38a1,
+    type: 3}
   bug: {fileID: 7729787670809138356}
 --- !u!50 &1186290017
 Rigidbody2D:
@@ -521,12 +529,12 @@ PrefabInstance:
     - target: {fileID: 6320889731211544380, guid: 876c85599644966409a97137c214afad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.74
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6320889731211544380, guid: 876c85599644966409a97137c214afad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.85
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 6320889731211544380, guid: 876c85599644966409a97137c214afad,
         type: 3}
@@ -600,12 +608,12 @@ PrefabInstance:
     - target: {fileID: 6012980347111689017, guid: 6844c3eb9a7a73e498d9e78f0f62a6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.34
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 6012980347111689017, guid: 6844c3eb9a7a73e498d9e78f0f62a6e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.91
+      value: -1.11
       objectReference: {fileID: 0}
     - target: {fileID: 6012980347111689017, guid: 6844c3eb9a7a73e498d9e78f0f62a6e2,
         type: 3}
@@ -679,12 +687,12 @@ PrefabInstance:
     - target: {fileID: 6095927139937374394, guid: d4f178463f0a38f41a03d3a9780e2e95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.67
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6095927139937374394, guid: d4f178463f0a38f41a03d3a9780e2e95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -2.97
       objectReference: {fileID: 0}
     - target: {fileID: 6095927139937374394, guid: d4f178463f0a38f41a03d3a9780e2e95,
         type: 3}
@@ -758,12 +766,12 @@ PrefabInstance:
     - target: {fileID: 3137772474429915971, guid: e7855c75bc0aeb94995632419e672b82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.83
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 3137772474429915971, guid: e7855c75bc0aeb94995632419e672b82,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: -2.11
       objectReference: {fileID: 0}
     - target: {fileID: 3137772474429915971, guid: e7855c75bc0aeb94995632419e672b82,
         type: 3}
@@ -837,12 +845,12 @@ PrefabInstance:
     - target: {fileID: 7175066549403252009, guid: fb5960e064100a444aab65e37040f49c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.13
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 7175066549403252009, guid: fb5960e064100a444aab65e37040f49c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.41
+      value: -4.48
       objectReference: {fileID: 0}
     - target: {fileID: 7175066549403252009, guid: fb5960e064100a444aab65e37040f49c,
         type: 3}
@@ -917,3 +925,4 @@ MonoBehaviour:
   Health: 5
   Damage: 1
   WalkSpeed: 1
+  plant: {fileID: 76571235}

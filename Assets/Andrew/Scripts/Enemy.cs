@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]private int Damage = 1;
     [SerializeField] private int WalkSpeed = 1;
 
+    public Plant plant;
+
     void Update()
     {
         //move position of enemy based on WalkSpeed
@@ -23,7 +25,12 @@ public class Enemy : MonoBehaviour
     {
         if (collider.tag == "pellet")
         {
-           //got hit, reduce health by plant damage
+            //got hit, reduce health by plant damage
+            Health = Health - plant.GetDmg();
+            if (Health == 0)
+            {
+                Destroy(this.gameObject); 
+            }
             
         }
     }
@@ -33,4 +40,5 @@ public class Enemy : MonoBehaviour
         return Damage;
     }
 
+    
 }

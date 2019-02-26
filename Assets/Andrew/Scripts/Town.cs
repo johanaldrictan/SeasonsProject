@@ -23,7 +23,6 @@ public class Town : MonoBehaviour
         if (collider.tag == "Enemy")
         {
             health = health - bug.GetDmg();
-            Debug.Log(health);
         }
     }
 }
