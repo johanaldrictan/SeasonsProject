@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 public class Resource : MonoBehaviour
 {
-    public int total;
+    public static int total;
 
     public int rateResource; // rateResource / rateSeconds = rate at which 
                              // resources are given to the player
@@ -27,10 +27,11 @@ public class Resource : MonoBehaviour
         {
             timer.Reset();
             total+=rateResource;
+            timer.Start();
         }
     }
 
-    public void Spend(int amount)
+    public static void Spend(int amount)
     {
         total -= amount;
     }

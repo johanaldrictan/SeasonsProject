@@ -49,10 +49,12 @@ public class CommanderController : MonoBehaviour
             tileSelecting.SetTile(lastTileLoc, null);
         }
         //End Tile highlighting code
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.total >= 20)
         {
             Plant p = (Plant)Instantiate(plantPrefab, MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
             MapController.instance.plantDictionary.Add(tilePointer, p);
+            //other script calls
+            Resource.Spend(20);
         }
     }
 }
