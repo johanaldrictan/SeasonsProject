@@ -38,16 +38,22 @@ public class Plant : MonoBehaviour
         if (TimeToLive < 0f || Health == 0)
         {
             //Destroy or something related to removing it, maybe animation idk
-            Destroy(this.gameObject);
+            Die();
         }
     }
 
     void Shoot()
     {
-        GameObject pellet = Instantiate(pelletPrefab, this.transform.position, Quaternion.identity);
-        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 7;
+        GameObject pellet = Instantiate(pelletPrefab, this.transform.position, this.transform.rotation);
+        pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
+        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 7;
     
+    }
+    void Die()
+    {
+        MapController.instance.plantDictionary.Remove(MapController.instance.grid.WorldToCell(this.transform.position));
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
