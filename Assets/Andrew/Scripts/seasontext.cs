@@ -12,6 +12,7 @@ public class seasontext : MonoBehaviour
     void Start()
     {
         SI_meshProUGUI = this.GetComponent<TextMeshProUGUI>();
+        seasoninstance = new Season();
     }
 
     // Update is called once per frame
