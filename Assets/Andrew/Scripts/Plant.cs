@@ -15,6 +15,7 @@ public class Plant : MonoBehaviour
 
     private float shootTickValue = 0f;  //value for tracking time between shots
     private float shootTickRate = 1f;
+    public Enemy bug;
 
     void Start()
     {
@@ -47,5 +48,18 @@ public class Plant : MonoBehaviour
         pellet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 7;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
     
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Enemy")
+        {
+            Health = Health - bug.GetDmg();
+        }
+    }
+
+    public int GetDmg()
+    {
+        return Damage;
     }
 }
