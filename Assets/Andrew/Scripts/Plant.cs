@@ -9,7 +9,7 @@ public class Plant : MonoBehaviour
     private Collider2D plantCollider;
     private Rigidbody2D plantRigidbody;
 
-    private int Health = 10;            //has 10 health
+    public int Health = 1;            //has 10 health
     private int Damage = 1;             //does 1 damage per pellet
     private float TimeToLive = 60f;     //lives for 60 seconds
 
@@ -46,7 +46,7 @@ public class Plant : MonoBehaviour
             shootTickValue = 0f;
         }
 
-        if (TimeToLive < 0f || Health == 0)
+        if (TimeToLive < 0f || Health <= 0)
         {
             //Destroy or something related to removing it, maybe animation idk
             Die();
@@ -67,11 +67,13 @@ public class Plant : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.tag == "Enemy")
+        if (collision.collider.CompareTag("Enemy"))
         {
-            Health = Health - bug.GetDmg();
+            //Health = Health - bug.GetDmg();
+            Health--;
+            Debug.Log(Health);
         }
     }
 

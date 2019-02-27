@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7610491200265868484}
   m_Layer: 0
   m_Name: Plant Prime
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pelletPrefab: {fileID: 8196635277680198418, guid: fea94402f2659404b95c581c9dd6166b,
     type: 3}
+  Health: 1
   bug: {fileID: 0}
 --- !u!61 &3624723703450192780
 BoxCollider2D:
@@ -144,7 +145,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &8228773971902103500
 GameObject:
   m_ObjectHideFlags: 0

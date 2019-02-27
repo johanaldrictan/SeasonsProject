@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]private int Health = 5;
+    public int Health = 3;
     [SerializeField]private int Damage = 1;
     [SerializeField] private int WalkSpeed = 1;
 
@@ -14,6 +14,11 @@ public class Enemy : MonoBehaviour
     {
         //move position of enemy based on WalkSpeed
         Move();
+        if (Health == 0)
+        {
+            Destroy(this.gameObject);
+
+        }
     }
 
     void Move()
@@ -21,24 +26,30 @@ public class Enemy : MonoBehaviour
         this.transform.Translate(Vector3.left * WalkSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (collider.CompareTag("pellet"))
-        {
-            //got hit, reduce health by plant damage
-            Health--;
-            if (Health == 0)
-            {
-                Destroy(this.gameObject);
-            }
-
-        }
-
-        if (collider.CompareTag("town"))
+        if (collision.gameObject.CompareTag("town"))
         {
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.CompareTag("plant"))
+        {
+            Destroy(this.gameObject);
+            //collision.gameObject.GetComponent<Plant>().Health--;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        //Debug.Log("getting hit 2");
+        //if (collider.CompareTag("pellet"))
+        //{
+        //    //got hit, reduce health by plant damage
+        //    Health--;
+        //    Debug.Log("getting hit");
+
+        //}
+
+        //Destroy(collider.gameObject);
     }
     public int GetDmg()
     {

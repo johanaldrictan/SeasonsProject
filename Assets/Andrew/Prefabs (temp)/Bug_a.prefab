@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 9050941784300787848}
   - component: {fileID: 4265980393949641314}
   - component: {fileID: 799240213501099580}
+  - component: {fileID: 8616689858796915609}
   m_Layer: 0
   m_Name: Bug_a
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8c4173f852f552e4a93a0848635f8101, type: 3}
   m_Color: {r: 0.9433962, g: 0.04004982, b: 0.04004982, a: 1}
   m_FlipX: 0
@@ -118,3 +119,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8616689858796915609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6335387953773413398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b09cbf391666ce46ae9f56b04093706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  Damage: 1
+  WalkSpeed: 1
+  plant: {fileID: 0}

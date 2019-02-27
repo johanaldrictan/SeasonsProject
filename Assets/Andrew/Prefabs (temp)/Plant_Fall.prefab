@@ -12,6 +12,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Fall
       objectReference: {fileID: 0}
+    - target: {fileID: 6818399703792538873, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_TagString
+      value: plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: plantShot
+      value: 
+      objectReference: {fileID: 4785284186634208650}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.44470766
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,31 +97,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.44470766
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: plantShot
-      value: 
-      objectReference: {fileID: 4785284186634208650}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
 --- !u!4 &4785284186634208650 stripped

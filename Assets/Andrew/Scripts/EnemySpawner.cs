@@ -42,27 +42,27 @@ public class EnemySpawner : MonoBehaviour
             
             if (SpawnPos == 0)
             {
-                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(-2, 0, 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(6, 1.5F, 0), Quaternion.identity);
                 newEnemy.GetComponent<Rigidbody2D>().velocity = Vector2.left * 1;
             }
             else if (SpawnPos == 1)
             {
-                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(-1, 0, 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(6, .5F, 0), Quaternion.identity);
                 newEnemy.GetComponent<Rigidbody2D>().velocity = Vector2.left * 1;
             }
             else if (SpawnPos == 2)
             {
-                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(0, 0, 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(6, -.5F, 0), Quaternion.identity);
                 newEnemy.GetComponent<Rigidbody2D>().velocity = Vector2.left * 1;
             }
             else if (SpawnPos == 3)
             {
-                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(1, 0, 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(6, -1.5F, 0), Quaternion.identity);
                 newEnemy.GetComponent<Rigidbody2D>().velocity = Vector2.left * 1;
             }
             else if (SpawnPos == 4)
             {
-                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(2, 0, 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemyPlant, new Vector3(6, -2.5F, 0), Quaternion.identity);
                 newEnemy.GetComponent<Rigidbody2D>().velocity = Vector2.left * 1;
             }
 

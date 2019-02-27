@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
-            //gameObject.SetActive(false);
+            collider.GetComponent<Enemy>().Health--;
         }
     }
 }
