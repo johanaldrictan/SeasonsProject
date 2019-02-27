@@ -7,6 +7,10 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
     [SerializeField]private int Health = 5;
     [SerializeField]private int Damage = 1;
+=======
+    [SerializeField] private int Health = 5;
+    [SerializeField] private int Damage = 1;
+>>>>>>> ScriptCombinationTest1
     [SerializeField] private int WalkSpeed = 1;
 
     public Plant plant;
@@ -21,6 +25,9 @@ public class Enemy : MonoBehaviour
     {
 <<<<<<< HEAD
         this.transform.Translate(new Vector2(0, WalkSpeed * Time.deltaTime));
+=======
+        this.transform.Translate(Vector3.left * WalkSpeed * Time.deltaTime);
+>>>>>>> ScriptCombinationTest1
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -50,3 +57,22 @@ public class Enemy : MonoBehaviour
 
     
 }
+=======
+        if (collider.CompareTag("pellet"))
+        {
+            //got hit, reduce health by plant damage
+            Health--;
+            if (Health == 0)
+            {
+                Destroy(this.gameObject);
+            }
+
+        }
+
+        if (collider.CompareTag("town"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+}
+>>>>>>> ScriptCombinationTest1
