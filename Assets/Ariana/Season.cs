@@ -56,10 +56,3 @@ public class Season : MonoBehaviour
         this.season = this.seasons[this.seasonNo];
     }
 }
-public enum Seasons
-{
-    Spring,
-    Summer,
-    Fall,
-    Winter
-}

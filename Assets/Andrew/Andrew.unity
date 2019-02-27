@@ -2536,10 +2536,10 @@ MonoBehaviour:
   tileSelecting: {fileID: 1831919842}
   tileSelector: {fileID: 11400000, guid: 8b9948662bc9f6144893c18762ebfec2, type: 2}
   plants:
-  - {fileID: 8396045804435712227, guid: 4c73ae1b3e70bfe49aa7ac0917cd9973, type: 3}
-  - {fileID: 8593509786364912521, guid: f51709f022275df4bb2120a8cc07691c, type: 3}
-  - {fileID: 7220109599575649531, guid: ba7b6c947bc988640986092048bce364, type: 3}
-  - {fileID: 57354094971215639, guid: da6f5e7d6fb05f146be99d90f444b629, type: 3}
+  - {fileID: 3221436642166562525, guid: 2b5f3c57eb9b8a2459c91dab48dfdc44, type: 3}
+  - {fileID: 2518841953273029025, guid: 058456d043d62f64784473edab4a0dbe, type: 3}
+  - {fileID: 2302958385698388527, guid: 8e650fc451f7c324e93575165dea5e77, type: 3}
+  - {fileID: 2046057457367648520, guid: a52967d0dfb9df6469f2263a301cce1f, type: 3}
 --- !u!4 &798982270
 Transform:
   m_ObjectHideFlags: 0
@@ -2633,6 +2633,7 @@ GameObject:
   - component: {fileID: 1229285993}
   - component: {fileID: 1229285992}
   - component: {fileID: 1229285994}
+  - component: {fileID: 1229285995}
   m_Layer: 0
   m_Name: UI Script Manager
   m_TagString: Untagged
@@ -2703,7 +2704,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229285989}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27594d499a5129149bc1730f17ec6bd7, type: 3}
   m_Name: 
@@ -2712,6 +2713,19 @@ MonoBehaviour:
     type: 3}
   shots: []
   amountToPool: 10
+--- !u!114 &1229285995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229285989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c4dee535521194d9b378088150ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lossCanvas: {fileID: 1496022501}
 --- !u!1 &1415879295
 GameObject:
   m_ObjectHideFlags: 0

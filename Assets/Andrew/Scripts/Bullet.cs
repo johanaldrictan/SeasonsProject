@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
 
         TimeToLive += Time.deltaTime;
         if (TimeToLive > 3f)
+            //gameObject.SetActive(false);
             Destroy(this.gameObject);
     }
 
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
+            //gameObject.SetActive(false);
         }
     }
 }
