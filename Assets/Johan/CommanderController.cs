@@ -16,7 +16,7 @@ public class CommanderController : MonoBehaviour
 
     public TileBase tileSelector;
 
-    public Plant plantPrefab;
+    public Plant[] plants;
 
     // Update is called once per frame
     void Update()
@@ -49,13 +49,14 @@ public class CommanderController : MonoBehaviour
             tileSelecting.SetTile(lastTileLoc, null);
         }
         //End Tile highlighting code
-        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.total >= 20)
+        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= 20)
         {
-            Plant p = (Plant)Instantiate(plantPrefab, MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
+            Plant p = (Plant)Instantiate(plants[Season.instance.seasonNo], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
             MapController.instance.plantDictionary.Add(tilePointer, p);
             //other script calls
-            Resource.Spend(20);
+            Resource.instance.Spend(20);
         }
+
     }
 }
 public enum HoverState

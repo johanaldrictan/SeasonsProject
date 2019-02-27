@@ -5,7 +5,8 @@ using System.Diagnostics;
 
 public class Resource : MonoBehaviour
 {
-    public static int total;
+    public static Resource instance;
+    public int total;
 
     public int rateResource; // rateResource / rateSeconds = rate at which 
                              // resources are given to the player
@@ -14,6 +15,18 @@ public class Resource : MonoBehaviour
 
     Stopwatch timer;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(this);
+    }
     void Start()
     {
         timer = new Stopwatch();
@@ -31,7 +44,7 @@ public class Resource : MonoBehaviour
         }
     }
 
-    public static void Spend(int amount)
+    public void Spend(int amount)
     {
         total -= amount;
     }

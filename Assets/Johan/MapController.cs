@@ -14,12 +14,15 @@ public class MapController : MonoBehaviour
 
     private void Awake()
     {
-        //each scene load I want a new instance of the mapcontroller but it needs to stay static
-        //needs to load start again in each scene
         if (instance == null)
         {
             instance = this;
         }
+        else
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(this);
     }
     private void Start()
     {

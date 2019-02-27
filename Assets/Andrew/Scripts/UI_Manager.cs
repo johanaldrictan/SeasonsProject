@@ -9,6 +9,6 @@ public class UI_Manager : MonoBehaviour
 
     void Update()
     {
-        resources.text = Resource.total.ToString();
+        resources.text = Resource.instance.total.ToString();
     }
 }

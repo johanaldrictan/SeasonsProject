@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 public class Season : MonoBehaviour
 {
+    public static Season instance;
     // Start is called before the first frame update
     string season;
 
@@ -13,11 +14,23 @@ public class Season : MonoBehaviour
 
     public int seasonLen;
     string [] seasons = new string[4] {"Spring", "Summer", "Fall", "Winter"};
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(this);
+    }
     void Start() //sets the season, starts the stopwatch
     {
         this.season = this.seasons[this.seasonNo];
         this.timer = new Stopwatch();
-        timer.Start();
+        //timer.Start();
     }
 
     // Update is called once per frame
@@ -25,7 +38,7 @@ public class Season : MonoBehaviour
                   //out the season
     {
         //UnityEngine.Debug.Log(timer.Elapsed);
-        if (timer.Elapsed.Seconds>=this.seasonLen)
+        if (timer.Elapsed.Seconds >= this.seasonLen)
         {
             timer.Reset();
             this.nextSeason();
@@ -42,4 +55,11 @@ public class Season : MonoBehaviour
             ++this.seasonNo;
         this.season = this.seasons[this.seasonNo];
     }
+}
+public enum Seasons
+{
+    Spring,
+    Summer,
+    Fall,
+    Winter
 }
