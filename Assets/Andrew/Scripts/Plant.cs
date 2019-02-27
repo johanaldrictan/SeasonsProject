@@ -17,17 +17,28 @@ public class Plant : MonoBehaviour
     private float shootTickRate = 1f;
     public Enemy bug;
 
+    private int SeasonPlantedIn;
+
     void Start()
     {
         plantRigidbody = GetComponent<Rigidbody2D>();
         plantCollider = GetComponent<Collider2D>();
 
+        SeasonPlantedIn = Season.instance.seasonNo;
     }
 
     void Update()
     {
-        TimeToLive -= Time.deltaTime;
         shootTickValue += Time.deltaTime;
+
+        if (SeasonPlantedIn != Season.instance.seasonNo)
+        {
+            TimeToLive = TimeToLive - (3 * Time.deltaTime);
+        }
+        else
+        {
+            TimeToLive -= Time.deltaTime;
+        }
 
         if (shootTickValue > shootTickRate)
         {
