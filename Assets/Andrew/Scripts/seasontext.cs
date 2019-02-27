@@ -7,6 +7,7 @@ using TMPro;
 public class seasontext : MonoBehaviour
 {
     TextMeshProUGUI SI_meshProUGUI;
+    public static Season seasoninstance;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,6 @@ public class seasontext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SI_meshProUGUI.text = string.Format("Season: Spring");
+        SI_meshProUGUI.text = string.Format("Season: {0}", seasoninstance.season);
     }
 }
