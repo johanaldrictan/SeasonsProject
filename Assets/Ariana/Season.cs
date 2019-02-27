@@ -7,7 +7,7 @@ public class Season : MonoBehaviour
 {
     public static Season instance;
     // Start is called before the first frame update
-    string season;
+    public string season;
 
     Stopwatch timer;
     public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
