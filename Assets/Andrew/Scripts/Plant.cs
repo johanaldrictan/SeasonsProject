@@ -16,17 +16,28 @@ public class Plant : MonoBehaviour
     private float shootTickValue = 0f;  //value for tracking time between shots
     private float shootTickRate = 1f;
 
+    private int SeasonPlantedIn;
+
     void Start()
     {
         plantRigidbody = GetComponent<Rigidbody2D>();
         plantCollider = GetComponent<Collider2D>();
 
+        SeasonPlantedIn = Season.instance.seasonNo;
     }
 
     void Update()
     {
-        TimeToLive -= Time.deltaTime;
         shootTickValue += Time.deltaTime;
+
+        if (SeasonPlantedIn != Season.instance.seasonNo)
+        {
+            TimeToLive = TimeToLive - (3 * Time.deltaTime);
+        }
+        else
+        {
+            TimeToLive -= Time.deltaTime;
+        }
 
         if (shootTickValue > shootTickRate)
         {
