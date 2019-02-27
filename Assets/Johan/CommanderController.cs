@@ -51,10 +51,13 @@ public class CommanderController : MonoBehaviour
         //End Tile highlighting code
         if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= 20)
         {
-            Plant p = (Plant)Instantiate(plants[Season.instance.seasonNo], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
-            MapController.instance.plantDictionary.Add(tilePointer, p);
-            //other script calls
-            Resource.instance.Spend(20);
+            if (!MapController.instance.plantDictionary.ContainsKey(tilePointer))
+            {
+                Plant p = (Plant)Instantiate(plants[Season.instance.seasonNo], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
+                MapController.instance.plantDictionary.Add(tilePointer, p);
+                //other script calls
+                Resource.instance.Spend(20);
+            }
         }
 
     }

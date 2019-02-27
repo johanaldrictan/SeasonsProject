@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class ShotPooler : MonoBehaviour
 {
+    public static ShotPooler instance;
     //This is what we're pooling
     public GameObject shotPrefab;
     //Array that keeps track of what we have in our pool
     public List<GameObject> shots;
     //Number of things we want pooled
-    public int amountToPool; 
+    public int amountToPool;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(this);
+    }
     void Start()
     {
         //Instantiate pool
