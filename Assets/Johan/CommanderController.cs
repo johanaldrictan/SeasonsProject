@@ -26,7 +26,8 @@ public class CommanderController : MonoBehaviour
         hit = Physics2D.Raycast(ray.origin, ray.direction, 100f);
         if (hit)
         {
-            hover_state = HoverState.HOVER;
+            if(hit.collider.CompareTag("PlantableTiles"))
+                hover_state = HoverState.HOVER;
         }
         else
         {
