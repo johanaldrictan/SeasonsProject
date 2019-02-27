@@ -35,7 +35,7 @@ public class Plant : MonoBehaviour
             shootTickValue = 0f;
         }
 
-        if (TimeToLive < 0f)
+        if (TimeToLive < 0f || Health == 0)
         {
             //Destroy or something related to removing it, maybe animation idk
             Destroy(this.gameObject);

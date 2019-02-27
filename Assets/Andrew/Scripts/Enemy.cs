@@ -33,6 +33,11 @@ public class Enemy : MonoBehaviour
             }
             
         }
+
+        if(collider.tag == "town")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public int GetDmg()
