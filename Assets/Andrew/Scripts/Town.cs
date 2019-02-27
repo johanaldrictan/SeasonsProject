@@ -5,7 +5,6 @@ using UnityEngine;
 public class Town : MonoBehaviour
 {
     [SerializeField]private int health;
-    public Enemy bug;
     private void Start()
     {
         health = 10;
@@ -20,9 +19,9 @@ public class Town : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Enemy")
+        if (collider.CompareTag("Enemy"))
         {
-            health = health - bug.GetDmg();
+            health = health - collider.GetComponent<Enemy>().GetDmg();
         }
     }
 }
