@@ -18,6 +18,8 @@ public class CommanderController : MonoBehaviour
 
     public Plant[] plants;
 
+    public int selectedPlant;
+
     // Update is called once per frame
     void Update()
     {
@@ -50,14 +52,24 @@ public class CommanderController : MonoBehaviour
             tileSelecting.SetTile(lastTileLoc, null);
         }
         //End Tile highlighting code
+        //if left click button press
         if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= 20)
         {
             if (!MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
-                Plant p = (Plant)Instantiate(plants[Season.instance.seasonNo], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
+                Plant p = (Plant)Instantiate(plants[selectedPlant], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
                 MapController.instance.plantDictionary.Add(tilePointer, p);
                 //other script calls
                 Resource.instance.Spend(20);
+            }
+        }
+        //if right click button press
+        else if(Input.GetMouseButton(1) && hover_state == HoverState.HOVER)
+        {
+            if (MapController.instance.plantDictionary.ContainsKey(tilePointer))
+            {
+                MapController.instance.plantDictionary[tilePointer].Die();
+                MapController.instance.plantDictionary.Remove(tilePointer);
             }
         }
 

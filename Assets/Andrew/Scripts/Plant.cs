@@ -61,7 +61,7 @@ public class Plant : MonoBehaviour
         pellet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 7;
     
     }
-    void Die()
+    public void Die()
     {
         MapController.instance.plantDictionary.Remove(MapController.instance.grid.WorldToCell(this.transform.position));
         Destroy(this.gameObject);
