@@ -3618,7 +3618,7 @@ GameObject:
   - component: {fileID: 2139844309}
   m_Layer: 0
   m_Name: Town
-  m_TagString: Untagged
+  m_TagString: town
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3814,4 +3814,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62aa78ec9dd6f124d83506ef01f11ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 1

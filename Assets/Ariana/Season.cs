@@ -46,7 +46,7 @@ public class Season : MonoBehaviour
         }
 
         
-        UnityEngine.Debug.Log(this.season);
+        //UnityEngine.Debug.Log(this.season);
     }
 
     void nextSeason() //cycles to the next season

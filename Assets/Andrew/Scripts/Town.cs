@@ -7,7 +7,7 @@ public class Town : MonoBehaviour
     [SerializeField]private int health;
     private void Start()
     {
-        health = 10;
+        //health = 10;
     }
 
     private void Update()
@@ -16,12 +16,18 @@ public class Town : MonoBehaviour
         {
             Debug.Log("--GAME OVER--");
         }
+
+        //Debug.Log(health);
     }
-    private void OnTriggerEnter2D(Collider2D collider)
+  
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.CompareTag("Enemy"))
+        Debug.Log("test");
+        if (collision.collider.CompareTag("Enemy"))
         {
-            health = health - collider.GetComponent<Enemy>().GetDmg();
+            health = health - collision.collider.GetComponent<Enemy>().GetDmg();
+            //Destroy(collider);
         }
     }
 }
