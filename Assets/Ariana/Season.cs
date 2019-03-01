@@ -13,7 +13,7 @@ public class Season : MonoBehaviour
     public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
 
     public int seasonLen;
-    string [] seasons = new string[4] {"Spring", "Summer", "Fall", "Winter"};
+    private string [] seasons = new string[4] {"Spring", "Summer", "Fall", "Winter"};
     private void Awake()
     {
         if(instance == null)
