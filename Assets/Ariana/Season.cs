@@ -30,7 +30,7 @@ public class Season : MonoBehaviour
     {
         this.season = this.seasons[this.seasonNo];
         this.timer = new Stopwatch();
-        //timer.Start();
+        timer.Start();
     }
 
     // Update is called once per frame
@@ -44,6 +44,8 @@ public class Season : MonoBehaviour
             this.nextSeason();
             timer.Start();
         }
+
+        
         //UnityEngine.Debug.Log(this.season);
     }
 
