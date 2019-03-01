@@ -53,14 +53,14 @@ public class CommanderController : MonoBehaviour
         }
         //End Tile highlighting code
         //if left click button press
-        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= 20)
+        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= 40)
         {
             if (!MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
                 Plant p = (Plant)Instantiate(plants[selectedPlant], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
                 MapController.instance.plantDictionary.Add(tilePointer, p);
                 //other script calls
-                Resource.instance.Spend(20);
+                Resource.instance.Spend(40);
             }
         }
         //if right click button press

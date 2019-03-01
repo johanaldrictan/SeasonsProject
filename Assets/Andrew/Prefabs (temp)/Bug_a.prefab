@@ -133,5 +133,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   Damage: 1
-  WalkSpeed: 1
+  WalkSpeed: 1.5
   plant: {fileID: 0}

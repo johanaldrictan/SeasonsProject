@@ -14,7 +14,7 @@ public class Plant : MonoBehaviour
     private float TimeToLive = 60f;     //lives for 60 seconds
 
     private float shootTickValue = 0f;  //value for tracking time between shots
-    private float shootTickRate = 1f;
+    private float shootTickRate = 1.25f;
     public Enemy bug;
 
     private int SeasonPlantedIn;
@@ -58,7 +58,7 @@ public class Plant : MonoBehaviour
         GameObject pellet = Instantiate(pelletPrefab, this.transform.position, this.transform.rotation);
         pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 7;
+        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 5;
     
     }
     public void Die()

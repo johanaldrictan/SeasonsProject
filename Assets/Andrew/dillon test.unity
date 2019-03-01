@@ -2422,7 +2422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.13, y: -42.63}
+  m_AnchoredPosition: {x: 126.130005, y: -42.630005}
   m_SizeDelta: {x: 252.26, y: 85.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531303335
@@ -2549,6 +2549,7 @@ MonoBehaviour:
   - {fileID: 2518841953273029025, guid: 058456d043d62f64784473edab4a0dbe, type: 3}
   - {fileID: 2302958385698388527, guid: 8e650fc451f7c324e93575165dea5e77, type: 3}
   - {fileID: 2046057457367648520, guid: a52967d0dfb9df6469f2263a301cce1f, type: 3}
+  selectedPlant: 0
 --- !u!4 &798982270
 Transform:
   m_ObjectHideFlags: 0
@@ -2636,8 +2637,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b582adca68d158d4bb8216c6ea0c08f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPlant: {fileID: 6335387953773413398, guid: 17ac1ee823e2d5d448640971e41c8991,
-    type: 3}
+  resourceLevels: 2c010000bc020000
+  SpawnThresholds:
+  - 3
+  - 3
+  - 2
+  Bag1:
+  - {fileID: 6335387953773413398, guid: 17ac1ee823e2d5d448640971e41c8991, type: 3}
+  - {fileID: 8097634624746550170, guid: 9af70bace700fce47ae27408e8cb490c, type: 3}
+  Bag2:
+  - {fileID: 6335387953773413398, guid: 17ac1ee823e2d5d448640971e41c8991, type: 3}
+  - {fileID: 8097634624746550170, guid: 9af70bace700fce47ae27408e8cb490c, type: 3}
+  - {fileID: 8097634624746550170, guid: 79c3a8f570b14e74fb5a901218268fc4, type: 3}
+  Bag3:
+  - {fileID: 6335387953773413398, guid: 17ac1ee823e2d5d448640971e41c8991, type: 3}
+  - {fileID: 6335387953773413398, guid: 17ac1ee823e2d5d448640971e41c8991, type: 3}
+  - {fileID: 8097634624746550170, guid: 9af70bace700fce47ae27408e8cb490c, type: 3}
+  - {fileID: 8097634624746550170, guid: 9af70bace700fce47ae27408e8cb490c, type: 3}
+  - {fileID: 8097634624746550170, guid: 79c3a8f570b14e74fb5a901218268fc4, type: 3}
+  Bag4: []
+  Bag5: []
+  spawnCoords:
+  - {x: 6, y: 1.5, z: 0}
+  - {x: 6, y: 0.5, z: 0}
+  - {x: 6, y: -0.5, z: 0}
+  - {x: 6, y: -1.5, z: 0}
+  - {x: 6, y: -2.5, z: 0}
 --- !u!4 &1005572307
 Transform:
   m_ObjectHideFlags: 0
@@ -3067,7 +3092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   season: 
   seasonNo: 0
-  seasonLen: 5
+  seasonLen: 15
 --- !u!114 &1229285993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,6 +3106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total: 0
+  netTotal: 0
   rateResource: 20
   rateSeconds: 3
 --- !u!114 &1229285994

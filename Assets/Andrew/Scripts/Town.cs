@@ -26,7 +26,7 @@ public class Town : MonoBehaviour
         Debug.Log("test");
         if (collision.collider.CompareTag("Enemy"))
         {
-            health = health - collision.collider.GetComponent<Enemy>().GetDmg();
+            health = health - (int)collision.collider.GetComponent<Enemy>().GetDmg();
             //Destroy(collider);
         }
     }

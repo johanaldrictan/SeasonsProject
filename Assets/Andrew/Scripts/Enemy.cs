@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int Health = 3;
-    [SerializeField]private int Damage = 1;
-    [SerializeField] private int WalkSpeed = 1;
+    [SerializeField] private float Damage = 1;
+    [SerializeField] private float WalkSpeed = 2;
 
     public Plant plant;
 
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 
         //Destroy(collider.gameObject);
     }
-    public int GetDmg()
+    public float GetDmg()
     {
         return Damage;
     }
