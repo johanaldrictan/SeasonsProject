@@ -29,6 +29,11 @@ public class Plant : MonoBehaviour
 
     void Start()
     {
+        //raycast in all possible directions to find where the town is.
+        RaycastHit2D leftHit = Physics2D.Raycast(this.transform.position, Vector2.left);
+        RaycastHit2D rightHit = Physics2D.Raycast(this.transform.position, Vector2.right);
+        RaycastHit2D downHit = Physics2D.Raycast(this.transform.position, Vector2.down);
+
         plantRigidbody = GetComponent<Rigidbody2D>();
         plantCollider = GetComponent<Collider2D>();
 
@@ -40,7 +45,6 @@ public class Plant : MonoBehaviour
         {
             CostPrice = 40;
         }
-
         if (ripeTime.Length < 1)
         {
             Debug.Log("ERROR: NO RIPE TIME VALUES SET, NO DEATH VALUE SET");

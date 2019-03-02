@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8392977224901948800}
   - component: {fileID: 3624723703450192780}
   - component: {fileID: 7610491200265868484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plant Prime
   m_TagString: plant
   m_Icon: {fileID: 0}
@@ -98,7 +98,13 @@ MonoBehaviour:
   pelletPrefab: {fileID: 8196635277680198418, guid: fea94402f2659404b95c581c9dd6166b,
     type: 3}
   Health: 1
-  bug: {fileID: 0}
+  Damage: 1
+  shootTickRate: 0
+  saleValue: 
+  ripeTime: []
+  GoodSeasons: 
+  isResourcePlant: 0
+  CostPrice: 0
 --- !u!61 &3624723703450192780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3018720989775530533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
