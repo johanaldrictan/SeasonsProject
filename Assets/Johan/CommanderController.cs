@@ -72,6 +72,10 @@ public class CommanderController : MonoBehaviour
                 MapController.instance.plantDictionary.Remove(tilePointer);
             }
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+            //circular add
+            //check if plant is at the end of the list
+            selectedPlant = selectedPlant == plants.Length - 1 ? 0 : selectedPlant + 1;
 
     }
 }
