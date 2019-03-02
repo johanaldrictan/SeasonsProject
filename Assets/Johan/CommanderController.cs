@@ -85,7 +85,6 @@ public class CommanderController : MonoBehaviour
             //circular add
             //check if plant is at the end of the list
             selectedPlant = selectedPlant == plants.Length - 1 ? 0 : selectedPlant + 1;
-
     }
 
     void PlantSelction()
