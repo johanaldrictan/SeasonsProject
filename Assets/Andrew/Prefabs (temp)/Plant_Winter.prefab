@@ -12,6 +12,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Winter
       objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ripeTime.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: GoodSeasons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: plantShot
+      value: 
+      objectReference: {fileID: 4753673122113091245}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ripeTime.Array.data[0]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: GoodSeasons.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: CostPrice
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9680033
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,31 +117,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.9680033
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: plantShot
-      value: 
-      objectReference: {fileID: 4753673122113091245}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
 --- !u!4 &4753673122113091245 stripped

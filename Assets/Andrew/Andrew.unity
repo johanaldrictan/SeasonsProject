@@ -2540,6 +2540,7 @@ MonoBehaviour:
   - {fileID: 2518841953273029025, guid: 058456d043d62f64784473edab4a0dbe, type: 3}
   - {fileID: 2302958385698388527, guid: 8e650fc451f7c324e93575165dea5e77, type: 3}
   - {fileID: 2046057457367648520, guid: a52967d0dfb9df6469f2263a301cce1f, type: 3}
+  selectedPlant: 0
 --- !u!4 &798982270
 Transform:
   m_ObjectHideFlags: 0
@@ -2634,6 +2635,7 @@ GameObject:
   - component: {fileID: 1229285992}
   - component: {fileID: 1229285994}
   - component: {fileID: 1229285995}
+  - component: {fileID: 1229285996}
   m_Layer: 0
   m_Name: UI Script Manager
   m_TagString: Untagged
@@ -2680,6 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff921dad2796dc4d896e51b1587c856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  season: 
   seasonNo: 0
   seasonLen: 0
 --- !u!114 &1229285993
@@ -2695,6 +2698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total: 0
+  netTotal: 0
   rateResource: 20
   rateSeconds: 3
 --- !u!114 &1229285994
@@ -2725,7 +2729,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c4dee535521194d9b378088150ecf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lossCanvas: {fileID: 1496022501}
+  GameScene: 
+--- !u!114 &1229285996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229285989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4965147a7f2871748bd15c1badf7e7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415879295
 GameObject:
   m_ObjectHideFlags: 0

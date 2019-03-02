@@ -10,46 +10,68 @@ public class Plant : MonoBehaviour
     private Rigidbody2D plantRigidbody;
 
     public int Health = 1;            //has 10 health
-    private int Damage = 1;             //does 1 damage per pellet
-    private float TimeToLive = 60f;     //lives for 60 seconds
+    public int Damage = 1;             //does 1 damage per pellet
+    private float Timer = 0f;
 
     private float shootTickValue = 0f;  //value for tracking time between shots
-    private float shootTickRate = 1.25f;
-    public Enemy bug;
+    public float shootTickRate;         //if 0 won't shoot
 
-    private int SeasonPlantedIn;
+    //changes per plant prefab
+    public int[] saleValue;     //how much it is worth at each stage when removed
+    public float[] ripeTime;    //the time intervals where the above sale values are applied
+                                //ex: saleValue:      0      80      40
+                                //    ripeTime:  (0)     30      45      70 (last digit used for TTL)
+                                //             implied
+
+    public int[] GoodSeasons;
+
+    public int CostPrice;
 
     void Start()
     {
         plantRigidbody = GetComponent<Rigidbody2D>();
         plantCollider = GetComponent<Collider2D>();
 
-        SeasonPlantedIn = Season.instance.seasonNo;
+        if (saleValue.Length == 0) //default
+        {
+            saleValue = new int[] { 0 };
+        }
+        if (CostPrice == 0)
+        {
+            CostPrice = 40;
+        }
+
+        if (ripeTime.Length < 1)
+        {
+            Debug.Log("ERROR: NO RIPE TIME VALUES SET, NO DEATH VALUE SET");
+            Application.Quit();
+        }
     }
 
     void Update()
     {
-        shootTickValue += Time.deltaTime;
+        if (Timer >= ripeTime[ripeTime.Length - 1] || Health <= 0) //last index of ripeTime, the TTL
+        {
+            //Destroy or something related to removing it, maybe animation idk
+            Die();
+        }
 
-        if (SeasonPlantedIn != Season.instance.seasonNo)
+        if (CheckGoodSeason()) //if it is a good season for the plant normal decay
         {
-            TimeToLive = TimeToLive - (3 * Time.deltaTime);
+            Timer += Time.deltaTime;
         }
-        else
+        else //sped up decay rate
         {
-            TimeToLive -= Time.deltaTime;
+            Timer = Timer + (3 * Time.deltaTime);
         }
+
+        if (shootTickRate != 0f)
+            shootTickValue += Time.deltaTime; //timer only increases if tickrate > 0 (meaning a plant that is supposed to shoot)
 
         if (shootTickValue > shootTickRate)
         {
             Shoot();
             shootTickValue = 0f;
-        }
-
-        if (TimeToLive < 0f || Health <= 0)
-        {
-            //Destroy or something related to removing it, maybe animation idk
-            Die();
         }
     }
 
@@ -81,4 +103,33 @@ public class Plant : MonoBehaviour
     {
         return Damage;
     }
+
+    bool CheckGoodSeason()
+    {
+        for (int i = 0; i < GoodSeasons.Length; i++)
+        {
+            if (GoodSeasons[i] == Season.instance.seasonNo)
+                return true;
+        }
+        return false;
+    }
+
+    public int GetSalePrice()
+    {
+        int currentSalePrice = 0;
+        for (int i = ripeTime.Length - 1; i > -1; i--)
+        {
+            if (Timer < ripeTime[i])
+            {
+                currentSalePrice = saleValue[i]; //sets price to right-most value
+            }
+        }
+
+        if (CheckGoodSeason())
+            return currentSalePrice;
+        return currentSalePrice / 2;
+    }
+    //ex: saleValue:      0      80      40
+    //    ripeTime:  (0)     30      45      70 (last digit used for TTL)
+    //             implied
 }

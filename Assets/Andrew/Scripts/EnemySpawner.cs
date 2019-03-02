@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private float Timer;
+    public float Timer;
     private float TimerThreshold;
     private float subTimerThreshold;
 
@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
     public float[] SpawnThresholds;
 
     private int currLevel;
+
+    //gives the player one full season to plan ahead
+    private int StartSeason;
+    private bool GracePeriod;
 
 
     //if a bag has no specified size in the inspector, will not be used
@@ -46,6 +50,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        StartSeason = Season.instance.seasonNo;
+        GracePeriod = true;
+
         Timer = 0f;
         TimerThreshold = 10f;
         subTimerThreshold = 2f;
@@ -91,6 +98,11 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        if ((StartSeason != Season.instance.seasonNo) && GracePeriod)
+        {
+            GracePeriod = false;
+        }
+
         if (currLevel < resourceLevels.Length)
         {
             if (Resource.instance.netTotal >= resourceLevels[currLevel] && currLevel < (Bags.Count - 1))
@@ -103,7 +115,7 @@ public class EnemySpawner : MonoBehaviour
 
 
         Timer += Time.deltaTime;
-        if (Timer >= (TimerThreshold + SpawnThresholds[currLevel]))
+        if ((Timer >= (TimerThreshold + SpawnThresholds[currLevel])) && !GracePeriod)
         {
             StartCoroutine(SpawnBag(Bags[currBag])); //the GameObject[]
             Timer = 0f;

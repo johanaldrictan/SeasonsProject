@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
     public Text resources;
+    public Text timer;
 
     void Update()
     {
         resources.text = Resource.instance.total.ToString();
+        timer.text = Season.instance.timer.Elapsed.Seconds.ToString();
     }
 }

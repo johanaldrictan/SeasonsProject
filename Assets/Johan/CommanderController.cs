@@ -17,12 +17,19 @@ public class CommanderController : MonoBehaviour
     public TileBase tileSelector;
 
     public Plant[] plants;
-
     public int selectedPlant;
+
+    void Start()
+    {
+        selectedPlant = 0;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        //plant selection by q/w/e/r
+        PlantSelction();
+
         //Start Tile highlighting code
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         hit = Physics2D.Raycast(ray.origin, ray.direction, 100f);
@@ -53,14 +60,14 @@ public class CommanderController : MonoBehaviour
         }
         //End Tile highlighting code
         //if left click button press
-        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= 40)
+        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
         {
             if (!MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
                 Plant p = (Plant)Instantiate(plants[selectedPlant], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
                 MapController.instance.plantDictionary.Add(tilePointer, p);
                 //other script calls
-                Resource.instance.Spend(40);
+                Resource.instance.Spend(plants[selectedPlant].CostPrice);
             }
         }
         //if right click button press
@@ -68,11 +75,61 @@ public class CommanderController : MonoBehaviour
         {
             if (MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
+                //Debug.Log(MapController.instance.plantDictionary[tilePointer].name);
+                Resource.instance.Sell(MapController.instance.plantDictionary[tilePointer].GetSalePrice());
                 MapController.instance.plantDictionary[tilePointer].Die();
                 MapController.instance.plantDictionary.Remove(tilePointer);
             }
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+            //circular add
+            //check if plant is at the end of the list
+            selectedPlant = selectedPlant == plants.Length - 1 ? 0 : selectedPlant + 1;
 
+    }
+
+    void PlantSelction()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            //Debug.Log("Q");
+            selectedPlant = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            //Debug.Log("W");
+            selectedPlant = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //Debug.Log("E");
+            selectedPlant = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //Debug.Log("R");
+            selectedPlant = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            //Debug.Log("A");
+            selectedPlant = 4;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            //Debug.Log("S");
+            selectedPlant = 5;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            //Debug.Log("D");
+            selectedPlant = 6;
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //Debug.Log("F");
+            selectedPlant = 7;
+        }
     }
 }
 public enum HoverState

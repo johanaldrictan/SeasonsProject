@@ -9,10 +9,10 @@ public class Season : MonoBehaviour
     // Start is called before the first frame update
     public string season;
 
-    Stopwatch timer;
+    public Stopwatch timer;
     public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
 
-    public int seasonLen;
+    public float seasonLen;
     private string [] seasons = new string[4] {"Spring", "Summer", "Fall", "Winter"};
     private void Awake()
     {
@@ -40,6 +40,7 @@ public class Season : MonoBehaviour
         //UnityEngine.Debug.Log(timer.Elapsed);
         if (timer.Elapsed.Seconds >= this.seasonLen)
         {
+            UnityEngine.Debug.Log("changed seasons");
             timer.Reset();
             this.nextSeason();
             timer.Start();

@@ -34,20 +34,20 @@ public class Resource : MonoBehaviour
         timer = new Stopwatch();
         timer.Start();
 
-        total = 0;
-        netTotal = 0;
+        total = 200;
+        netTotal = total;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer.Elapsed.Seconds>=rateSeconds)
+        /*if (timer.Elapsed.Seconds>=rateSeconds)
         {
             timer.Reset();
             total += rateResource;
             netTotal += rateResource;
             timer.Start();
-        }
+        }*/
     }
 
     public void Spend(int amount)

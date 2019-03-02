@@ -10,12 +10,17 @@ PrefabInstance:
     - target: {fileID: 6818399703792538873, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Name
-      value: Plant_Spring
+      value: Plant_Spring_Rsrc
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: saleValue.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: ripeTime.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -29,13 +34,43 @@ PrefabInstance:
       objectReference: {fileID: 8154234832787644792}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
+      propertyPath: shootTickRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: saleValue.Array.data[1]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: saleValue.Array.data[2]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
       propertyPath: ripeTime.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ripeTime.Array.data[1]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ripeTime.Array.data[2]
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: CostPrice
-      value: 60
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: saleValue.Array.data[0]
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -111,6 +146,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}

@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7175066549403252009, guid: 17ac1ee823e2d5d448640971e41c8991,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175066549403252009, guid: 17ac1ee823e2d5d448640971e41c8991,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 9050941784300787848, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_Color.r
@@ -90,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 8616689858796915609, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: WalkSpeed
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ac1ee823e2d5d448640971e41c8991, type: 3}
