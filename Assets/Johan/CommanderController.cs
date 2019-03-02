@@ -76,7 +76,8 @@ public class CommanderController : MonoBehaviour
             if (MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
                 //Debug.Log(MapController.instance.plantDictionary[tilePointer].name);
-                Resource.instance.Sell(MapController.instance.plantDictionary[tilePointer].GetSalePrice());
+                if (MapController.instance.plantDictionary[tilePointer].isResourcePlant)
+                    Resource.instance.Sell(MapController.instance.plantDictionary[tilePointer].GetSalePrice());
                 MapController.instance.plantDictionary[tilePointer].Die();
                 MapController.instance.plantDictionary.Remove(tilePointer);
             }

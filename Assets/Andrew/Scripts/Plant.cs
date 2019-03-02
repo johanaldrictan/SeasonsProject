@@ -24,7 +24,7 @@ public class Plant : MonoBehaviour
                                 //             implied
 
     public int[] GoodSeasons;
-
+    public bool isResourcePlant;
     public int CostPrice;
 
     void Start()
@@ -68,7 +68,7 @@ public class Plant : MonoBehaviour
         if (shootTickRate != 0f)
             shootTickValue += Time.deltaTime; //timer only increases if tickrate > 0 (meaning a plant that is supposed to shoot)
 
-        if (shootTickValue > shootTickRate)
+        if (shootTickValue > shootTickRate && !isResourcePlant)
         {
             Shoot();
             shootTickValue = 0f;
