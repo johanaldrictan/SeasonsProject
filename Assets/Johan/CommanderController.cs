@@ -19,8 +19,15 @@ public class CommanderController : MonoBehaviour
     public Plant[] plants;
     public int selectedPlant;
 
+    public AudioClip plantSound;
+    public AudioClip harvestSound;
+    public AudioClip sellSound;
+
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         selectedPlant = 0;
     }
 
@@ -64,6 +71,8 @@ public class CommanderController : MonoBehaviour
         {
             if (!MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
+                audioSource.clip = plantSound;
+                audioSource.Play();
                 Plant p = (Plant)Instantiate(plants[selectedPlant], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
                 MapController.instance.plantDictionary.Add(tilePointer, p);
                 //other script calls
@@ -77,7 +86,15 @@ public class CommanderController : MonoBehaviour
             {
                 //Debug.Log(MapController.instance.plantDictionary[tilePointer].name);
                 if (MapController.instance.plantDictionary[tilePointer].isResourcePlant)
+                {
+                    audioSource.clip = sellSound;
                     Resource.instance.Sell(MapController.instance.plantDictionary[tilePointer].GetSalePrice());
+                }
+                else
+                {
+                    audioSource.clip = harvestSound;
+                }
+                audioSource.Play();
                 MapController.instance.plantDictionary[tilePointer].Die();
                 MapController.instance.plantDictionary.Remove(tilePointer);
             }
