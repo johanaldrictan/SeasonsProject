@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public int Health = 3;
     [SerializeField] private float Damage = 1;
     [SerializeField] private float WalkSpeed = 2;
+    [SerializeField] private float force = 800;
+
 
     public Plant plant;
 
@@ -14,7 +16,7 @@ public class Enemy : MonoBehaviour
     {
         //move position of enemy based on WalkSpeed
         Move();
-        if (Health == 0)
+        if (Health <= 0)
         {
             Destroy(this.gameObject);
 
@@ -23,7 +25,8 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        this.transform.Translate(Vector3.left * WalkSpeed * Time.deltaTime);
+        //this.transform.Translate(Vector3.left * WalkSpeed * Time.deltaTime);
+        this.GetComponent<Rigidbody2D>().velocity = Vector2.left * WalkSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,25 +35,12 @@ public class Enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.CompareTag("plant"))
+        else if (collision.gameObject.CompareTag("plant") && collision.gameObject.GetComponent<Plant>().isResourcePlant == false)
         {
-            Destroy(this.gameObject);
-            //collision.gameObject.GetComponent<Plant>().Health--;
+            //this.GetComponent<Rigidbody2D>().AddForce(Vector3.right * force, ForceMode2D.Impulse); // trying to make the bug get pushed back after hitting a plant
         }
     }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        //Debug.Log("getting hit 2");
-        //if (collider.CompareTag("pellet"))
-        //{
-        //    //got hit, reduce health by plant damage
-        //    Health--;
-        //    Debug.Log("getting hit");
 
-        //}
-
-        //Destroy(collider.gameObject);
-    }
     public float GetDmg()
     {
         return Damage;
