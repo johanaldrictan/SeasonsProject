@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class seasontext : MonoBehaviour
+public class SeasonText : MonoBehaviour
 {
     TextMeshProUGUI SI_meshProUGUI;
     // Start is called before the first frame update
@@ -18,6 +18,5 @@ public class seasontext : MonoBehaviour
     {
         SI_meshProUGUI.text = string.Format("Season: {0}", Season.instance.season);
         //Debug.Log(Season.instance.season)
-        //SI_meshProUGUI.text = "Season: " + seasoninstance.season; 
     }
 }
