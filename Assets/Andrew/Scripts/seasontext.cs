@@ -7,12 +7,10 @@ using TMPro;
 public class seasontext : MonoBehaviour
 {
     TextMeshProUGUI SI_meshProUGUI;
-    public Season seasoninstance;
     // Start is called before the first frame update
     void Start()
     {
         SI_meshProUGUI = this.GetComponent<TextMeshProUGUI>();
-        seasoninstance = new Season();
     }
 
     // Update is called once per frame

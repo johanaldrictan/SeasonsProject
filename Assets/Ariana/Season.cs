@@ -13,7 +13,7 @@ public class Season : MonoBehaviour
     public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
 
     public float seasonLen;
-    private readonly string [] seasons = {"Spring", "Summer", "Fall", "Winter"};
+    private string[] seasons;
     private void Awake()
     {
         if(instance == null)
@@ -28,6 +28,7 @@ public class Season : MonoBehaviour
     }
     void Start() //sets the season, starts the stopwatch
     {
+        seasons = new string[4] { "Spring", "Summer", "Fall", "Winter"};
         this.season = this.seasons[this.seasonNo];
         this.timer = new Stopwatch();
         timer.Start();
