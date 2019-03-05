@@ -15,7 +15,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -109,31 +109,23 @@ PrefabInstance:
     - target: {fileID: 9050941784300787848, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_Color.g
-<<<<<<< HEAD
-      value: 0.9575472
-=======
       value: 1
->>>>>>> origin/master
       objectReference: {fileID: 0}
     - target: {fileID: 9050941784300787848, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_Color.b
-<<<<<<< HEAD
-      value: 0.9575472
-=======
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9050941784300787848, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_Sprite
-      value: 
+      value:
       objectReference: {fileID: 21300000, guid: 4e2b4cf0fd280a2449a9ac8cb248a46a,
         type: 3}
     - target: {fileID: 9050941784300787848, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_Color.a
       value: 1
->>>>>>> origin/master
       objectReference: {fileID: 0}
     - target: {fileID: 8616689858796915609, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
