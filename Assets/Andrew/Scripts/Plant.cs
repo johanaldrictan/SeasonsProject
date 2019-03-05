@@ -24,15 +24,23 @@ public class Plant : MonoBehaviour
                                 //             implied
 
     public int[] GoodSeasons;
-    public bool isResourcePlant;
     public int CostPrice;
+    public bool isResourcePlant;
 
     void Start()
     {
         //raycast in all possible directions to find where the town is.
         RaycastHit2D leftHit = Physics2D.Raycast(this.transform.position, Vector2.left);
         RaycastHit2D rightHit = Physics2D.Raycast(this.transform.position, Vector2.right);
-        RaycastHit2D downHit = Physics2D.Raycast(this.transform.position, Vector2.down);
+        //left Hit
+        if (leftHit.collider != null)
+        {
+            this.transform.Rotate(new Vector3(0, 0, 90));
+        }
+        else if(rightHit.collider != null)
+        {
+            this.transform.Rotate(new Vector3(0, 0, 270));
+        }
 
         plantRigidbody = GetComponent<Rigidbody2D>();
         plantCollider = GetComponent<Collider2D>();
@@ -84,7 +92,7 @@ public class Plant : MonoBehaviour
         GameObject pellet = Instantiate(pelletPrefab, this.transform.position, this.transform.rotation);
         pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 5;
+        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.up * 5;
     
     }
     public void Die()
