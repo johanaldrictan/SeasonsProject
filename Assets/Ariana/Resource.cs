@@ -21,7 +21,6 @@ public class Resource : MonoBehaviour
         {
             Destroy(this);
         }
-        DontDestroyOnLoad(this);
     }
 
     void Start()

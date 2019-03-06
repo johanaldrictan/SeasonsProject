@@ -22,7 +22,6 @@ public class MapController : MonoBehaviour
         {
             Destroy(this);
         }
-        DontDestroyOnLoad(this);
     }
     private void Start()
     {

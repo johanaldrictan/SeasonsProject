@@ -22,7 +22,6 @@ public class ShotPooler : MonoBehaviour
         {
             Destroy(this);
         }
-        DontDestroyOnLoad(this);
     }
     void Start()
     {
