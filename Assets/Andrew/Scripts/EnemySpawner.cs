@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         StartSeason = Season.instance.seasonNo;
-        GracePeriod = true;
+        GracePeriod = false;
 
         Timer = 0f;
         TimerThreshold = 10f;
