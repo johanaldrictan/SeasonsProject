@@ -26,7 +26,7 @@ public class Plant : MonoBehaviour
     public int[] GoodSeasons;
     public int CostPrice;
     public bool isResourcePlant;
-
+    private AudioSource shootSoundSource;
     void Start()
     {
         //raycast in all possible directions to find where the town is.
@@ -58,6 +58,7 @@ public class Plant : MonoBehaviour
             Debug.Log("ERROR: NO RIPE TIME VALUES SET, NO DEATH VALUE SET");
             Application.Quit();
         }
+        shootSoundSource = this.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -93,7 +94,7 @@ public class Plant : MonoBehaviour
         pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
         pellet.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
-    
+        shootSoundSource.Play();
     }
     public void Die()
     {
