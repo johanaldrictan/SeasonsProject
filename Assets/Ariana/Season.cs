@@ -10,6 +10,7 @@ public class Season : MonoBehaviour
     public string season;
 
     public Stopwatch timer;
+    public float countdown;
     public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
 
     public float seasonLen;
@@ -45,8 +46,9 @@ public class Season : MonoBehaviour
             timer.Reset();
             this.nextSeason();
             timer.Start();
+            countdown = seasonLen;
         }
-
+        countdown = seasonLen - timer.Elapsed.Seconds;
         
         //UnityEngine.Debug.Log(this.season);
     }
