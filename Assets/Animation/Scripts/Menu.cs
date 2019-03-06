@@ -31,6 +31,11 @@ public class Menu : MonoBehaviour
         checkGame();
         //Debug.Log(Time.timeScale);
     }
+    
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("dillon test");
+    }
 
     public void StartGame()
     {
