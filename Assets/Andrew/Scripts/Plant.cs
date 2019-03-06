@@ -9,6 +9,8 @@ public class Plant : MonoBehaviour
     private Collider2D plantCollider;
     private Rigidbody2D plantRigidbody;
 
+    public GameObject shotSpawn;
+
     public int Health = 1;            //has 10 health
     public int Damage = 1;             //does 1 damage per pellet
     private float Timer = 0f;
@@ -35,11 +37,11 @@ public class Plant : MonoBehaviour
         //left Hit
         if (leftHit.collider != null)
         {
-            this.transform.Rotate(new Vector3(0, 0, -90));
+            shotSpawn.transform.Rotate(new Vector3(0, 0, -90));
         }
         else if(rightHit.collider != null)
         {
-            this.transform.Rotate(new Vector3(0, 0, 90));
+            shotSpawn.transform.Rotate(new Vector3(0, 0, 90));
         }
 
         plantRigidbody = GetComponent<Rigidbody2D>();
@@ -72,10 +74,12 @@ public class Plant : MonoBehaviour
         if (CheckGoodSeason()) //if it is a good season for the plant normal decay
         {
             Timer += Time.deltaTime;
+            shootTickRate = .8f;
         }
         else //sped up decay rate
         {
             Timer = Timer + (3 * Time.deltaTime);
+            shootTickRate = 1f;
         }
 
         if (shootTickRate != 0f)
@@ -90,10 +94,10 @@ public class Plant : MonoBehaviour
 
     void Shoot()
     {
-        GameObject pellet = Instantiate(pelletPrefab, this.transform.position, this.transform.rotation);
-        pellet.transform.position = this.transform.position;
+        GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+        pellet.transform.position = shotSpawn.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-        pellet.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+        pellet.GetComponent<Rigidbody2D>().velocity = shotSpawn.transform.up * 5;
         shootSoundSource.Play();
     }
     public void Die()
