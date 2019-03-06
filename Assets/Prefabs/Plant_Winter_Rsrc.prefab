@@ -87,10 +87,28 @@ PrefabInstance:
       propertyPath: Health
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ThisPlantSpriteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300002, guid: a3fee23717bef8d4791f403129cea410,
+        type: 3}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ThisPlantSpriteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300004, guid: a3fee23717bef8d4791f403129cea410,
+        type: 3}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ThisPlantSpriteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300006, guid: a3fee23717bef8d4791f403129cea410,
+        type: 3}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -100,13 +118,19 @@ PrefabInstance:
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9680033
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: a3fee23717bef8d4791f403129cea410,
+        type: 3}
     - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,6 +195,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.515625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.21875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}

@@ -94,6 +94,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
+      propertyPath: ThisPlantSpriteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: fb3fa794c68b81844ad4de045e3cf985,
+        type: 3}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ThisPlantSpriteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300006, guid: fb3fa794c68b81844ad4de045e3cf985,
+        type: 3}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: ThisPlantSpriteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300010, guid: fb3fa794c68b81844ad4de045e3cf985,
+        type: 3}
       propertyPath: shotSpawn
       value: 
       objectReference: {fileID: 1855028357314523235}
@@ -105,12 +121,12 @@ PrefabInstance:
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -122,6 +138,12 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb3fa794c68b81844ad4de045e3cf985,
+        type: 3}
     - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -186,6 +208,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.28125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.140625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
