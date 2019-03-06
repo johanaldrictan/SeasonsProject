@@ -35,11 +35,11 @@ public class Plant : MonoBehaviour
         //left Hit
         if (leftHit.collider != null)
         {
-            this.transform.Rotate(new Vector3(0, 0, 90));
+            this.transform.Rotate(new Vector3(0, 0, -90));
         }
         else if(rightHit.collider != null)
         {
-            this.transform.Rotate(new Vector3(0, 0, 270));
+            this.transform.Rotate(new Vector3(0, 0, 90));
         }
 
         plantRigidbody = GetComponent<Rigidbody2D>();
@@ -89,10 +89,10 @@ public class Plant : MonoBehaviour
 
     void Shoot()
     {
-        GameObject pellet = Instantiate(pelletPrefab, this.transform.position, this.transform.rotation);
+        GameObject pellet = Instantiate(pelletPrefab, this.transform.position, Quaternion.identity);
         pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.up * 5;
+        pellet.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
     
     }
     public void Die()
