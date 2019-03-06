@@ -47,6 +47,11 @@ PrefabInstance:
       propertyPath: CostPrice
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: shotSpawn
+      value: 
+      objectReference: {fileID: 1855028357314523235}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.r
@@ -122,8 +127,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
+--- !u!1 &1855028357314523235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8228773971902103500, guid: 15b992f58a0ab434692480cf2b486199,
+    type: 3}
+  m_PrefabInstance: {fileID: 7749595593948155823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4785284186634208650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,
