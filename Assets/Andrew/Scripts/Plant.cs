@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Plant : MonoBehaviour
 {
@@ -22,11 +23,13 @@ public class Plant : MonoBehaviour
                                 //ex: saleValue:      0      80      40
                                 //    ripeTime:  (0)     30      45      70 (last digit used for TTL)
                                 //             implied
-
+    private int currentImageNo = 0; 
     public int[] GoodSeasons;
     public int CostPrice;
     public bool isResourcePlant;
     private AudioSource shootSoundSource;
+
+    public Sprite[] ThisPlantSpriteArray;
     void Start()
     {
         //raycast in all possible directions to find where the town is.
@@ -86,6 +89,7 @@ public class Plant : MonoBehaviour
             Shoot();
             shootTickValue = 0f;
         }
+        GrowPlant();
     }
 
     void Shoot()
@@ -145,4 +149,19 @@ public class Plant : MonoBehaviour
     //ex: saleValue:      0      80      40
     //    ripeTime:  (0)     30      45      70 (last digit used for TTL)
     //             implied
+    void GrowPlant()
+    {
+        int savednum = this.currentImageNo;
+        for (int i = ripeTime.Length - 1; i > -1; i--)
+        {
+            if (Timer < ripeTime[i])
+            {
+                currentImageNo = i;
+            }
+        }
+        if (savednum!=currentImageNo)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = ThisPlantSpriteArray[currentImageNo];
+        }
+    }
 }
