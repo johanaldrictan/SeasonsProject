@@ -72,10 +72,12 @@ public class Plant : MonoBehaviour
         if (CheckGoodSeason()) //if it is a good season for the plant normal decay
         {
             Timer += Time.deltaTime;
+            shootTickRate = .8f;
         }
         else //sped up decay rate
         {
             Timer = Timer + (3 * Time.deltaTime);
+            shootTickRate = 1f;
         }
 
         if (shootTickRate != 0f)
