@@ -5,6 +5,7 @@ using UnityEngine;
 public class Town : MonoBehaviour
 {
     [SerializeField]private int health;
+    public bool gameOver = false;
     private void Start()
     {
         //health = 10;
@@ -14,7 +15,8 @@ public class Town : MonoBehaviour
     {
         if (health == 0)
         {
-            Debug.Log("--GAME OVER--");
+            //Debug.Log("--GAME OVER--");
+            gameOver = true;
         }
 
         //Debug.Log(health);
