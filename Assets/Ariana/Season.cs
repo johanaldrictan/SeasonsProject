@@ -41,7 +41,7 @@ public class Season : MonoBehaviour
         //UnityEngine.Debug.Log(timer.Elapsed);
         if (timer.Elapsed.Seconds >= this.seasonLen)
         {
-            UnityEngine.Debug.Log("changed seasons");
+            //UnityEngine.Debug.Log("changed seasons");
             timer.Reset();
             this.nextSeason();
             timer.Start();
@@ -59,5 +59,6 @@ public class Season : MonoBehaviour
         else
             ++this.seasonNo;
         this.season = this.seasons[this.seasonNo];
+        //UnityEngine.Debug.Log(season);
     }
 }

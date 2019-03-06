@@ -8,6 +8,9 @@ public class Resource : MonoBehaviour
     public int total;
     public int netTotal;
 
+    private int rateResource = 5;
+    private float rateSeconds = 2f;
+
     Stopwatch timer;
 
     public static Resource instance;
@@ -35,13 +38,13 @@ public class Resource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (timer.Elapsed.Seconds>=rateSeconds)
+        if (timer.Elapsed.Seconds>=rateSeconds)
         {
             timer.Reset();
             total += rateResource;
             netTotal += rateResource;
             timer.Start();
-        }*/
+        }
     }
 
     public void Spend(int amount)
