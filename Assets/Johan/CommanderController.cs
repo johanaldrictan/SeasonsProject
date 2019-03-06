@@ -110,6 +110,7 @@ public class CommanderController : MonoBehaviour
 
     void PlantSelection()
     {
+        //switch()
         if (Input.GetKeyDown(KeyCode.Q))
         {
             //Debug.Log("Q");
