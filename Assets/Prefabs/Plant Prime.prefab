@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pelletPrefab: {fileID: 8196635277680198418, guid: fea94402f2659404b95c581c9dd6166b,
     type: 3}
+  shotSpawn: {fileID: 8228773971902103500}
   Health: 3
   Damage: 1
   shootTickRate: 0

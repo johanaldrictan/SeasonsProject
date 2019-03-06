@@ -74,12 +74,16 @@ public class CommanderController : MonoBehaviour
         {
             if (!MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
-                audioSource.clip = plantSound;
-                audioSource.Play();
-                Plant p = (Plant)Instantiate(plants[selectedPlant], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
-                MapController.instance.plantDictionary.Add(tilePointer, p);
-                //other script calls
-                Resource.instance.Spend(plants[selectedPlant].CostPrice);
+                //RaycastHit2D hit = Physics2D.CircleCast(MapController.instance.grid.GetCellCenterWorld(tilePointer), 1f, Vector2.zero);
+                //if (!hit.collider.CompareTag("Enemy"))
+                //{
+                    audioSource.clip = plantSound;
+                    audioSource.Play();
+                    Plant p = (Plant)Instantiate(plants[selectedPlant], MapController.instance.grid.GetCellCenterWorld(tilePointer), Quaternion.identity);
+                    MapController.instance.plantDictionary.Add(tilePointer, p);
+                    //other script calls
+                    Resource.instance.Spend(plants[selectedPlant].CostPrice);
+                //}
             }
         }
         //if right click button press

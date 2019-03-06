@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int Health = 3;
     [SerializeField] private float Damage = 1;
     [SerializeField] private float WalkSpeed = 2;
-    [SerializeField] private float force = 800;
+    [SerializeField] private float force = 1200;
 
 
     public Plant plant;
