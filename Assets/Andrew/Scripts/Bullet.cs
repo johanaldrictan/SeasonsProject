@@ -7,8 +7,9 @@ public class Bullet : MonoBehaviour
     //private int speed = 1;
     private float TimeToLive = 0;
     private AudioSource audioSource;
-    public AudioClip[] bugHitSounds;
+    public AudioClip[] bugHitSounds; 
 
+    public AudioClip[] bugDeathSounds; //CHANGE HERE
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -28,10 +29,19 @@ public class Bullet : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            audioSource.clip = bugHitSounds[Random.Range(0, bugHitSounds.Length - 1)];
-            audioSource.Play();
+            //BIG CHANGE HERE
+            int enemyHealth = collider.GetComponent<Enemy>().Health--;
+            if (enemyHealth > 0)
+            {
+                audioSource.clip = bugHitSounds[Random.Range(0, bugHitSounds.Length - 1)];
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.clip = bugDeathSounds[Random.Range(0, bugDeathSounds.Length - 1)];
+                audioSource.Play(); 
+            }
             Destroy(this.gameObject);
-            collider.GetComponent<Enemy>().Health--;
         }
     }
 }
