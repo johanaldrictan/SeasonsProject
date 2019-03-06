@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &8817320436299114362
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581724526600454360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c4fef096b105c0468c98b9bd22c483a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6236747953399780385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,23 +64,29 @@ PrefabInstance:
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8962264
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8388653
+      value: 0.9858491
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.16487186
+      value: 0.9858491
       objectReference: {fileID: 0}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d2818cac668d58458ad64873b30c2ef,
+        type: 3}
     - target: {fileID: 1487930371424591677, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -117,8 +142,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.71875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.921875
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
+--- !u!1 &581724526600454360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6818399703792538873, guid: 15b992f58a0ab434692480cf2b486199,
+    type: 3}
+  m_PrefabInstance: {fileID: 6236747953399780385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9181088699140529668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,
