@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class CommanderController : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class CommanderController : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public Image PlantChoiceImage;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,7 +38,7 @@ public class CommanderController : MonoBehaviour
     void Update()
     {
         //plant selection by q/w/e/r
-        PlantSelction();
+        PlantSelection();
 
         //Start Tile highlighting code
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -105,7 +108,7 @@ public class CommanderController : MonoBehaviour
             selectedPlant = selectedPlant == plants.Length - 1 ? 0 : selectedPlant + 1;
     }
 
-    void PlantSelction()
+    void PlantSelection()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -147,6 +150,7 @@ public class CommanderController : MonoBehaviour
             //Debug.Log("F");
             selectedPlant = 7;
         }
+        PlantChoiceImage.GetComponent<Image>().sprite = plants[selectedPlant].GetComponent<SpriteRenderer>().sprite;
     }
 }
 public enum HoverState
