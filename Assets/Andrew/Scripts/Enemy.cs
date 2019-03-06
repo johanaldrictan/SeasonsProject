@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("plant") && collision.gameObject.GetComponent<Plant>().isResourcePlant == false)
         {
-            //this.GetComponent<Rigidbody2D>().AddForce(Vector3.right * force, ForceMode2D.Impulse); // trying to make the bug get pushed back after hitting a plant
+            this.GetComponent<Rigidbody2D>().AddForce(Vector3.right * force); // bug gets pushed back after hitting plant
         }
     }
 
