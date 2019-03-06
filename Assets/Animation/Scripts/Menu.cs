@@ -10,8 +10,9 @@ public class Menu : MonoBehaviour
     public GameObject quitGame;
     public GameObject winner;
     public GameObject loser;
-    public GameObject timer;
-    public GameObject resources;
+    public GameObject commander;
+    public GameObject Canvas;
+
     Scene scene1;
 
     private Town town;
@@ -19,9 +20,8 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         scene1 = SceneManager.GetActiveScene();
-        //Time.timeScale = 1;
-        //timer.SetActive(true);
         town = GameObject.FindGameObjectWithTag("town").GetComponent<Town>();
     }
 
@@ -29,13 +29,12 @@ public class Menu : MonoBehaviour
     void Update()
     {
         checkGame();
+        //Debug.Log(Time.timeScale);
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene(scene1.name);
-        //timer.SetActive(true);
-        //resources.SetActive(true);
 
     }
 
@@ -51,16 +50,13 @@ public class Menu : MonoBehaviour
         {
             //pause stuff
             Time.timeScale = 0;
-            //GameObject UI = GameObject.Find("UI Script Manager");
-            //UI.GetComponent<UI_Manager>().enabled = false;
+            Canvas.SetActive(false);
+            commander.SetActive(false);
 
-
+            //menu appear
             playAgain.SetActive(true);
             quitGame.SetActive(true);
-
-            SceneManager.UnloadSceneAsync(scene1.name);
-            //timer.SetActive(false);
-            //resources.SetActive(false);
+            
 
             if (true)
             {

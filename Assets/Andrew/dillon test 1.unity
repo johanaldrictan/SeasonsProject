@@ -2786,6 +2786,7 @@ MonoBehaviour:
   plantSound: {fileID: 8300000, guid: 83b012610936d7442bc6f51f181ead34, type: 3}
   harvestSound: {fileID: 8300000, guid: ce13f8897442cc644a8b9de2f9dac7d5, type: 3}
   sellSound: {fileID: 8300000, guid: ab35ebf2e4ae19847ac02834bc3cd2ac, type: 3}
+  PlantChoiceImage: {fileID: 0}
 --- !u!4 &798982270
 Transform:
   m_ObjectHideFlags: 0
@@ -3025,7 +3026,7 @@ MonoBehaviour:
   quitGame: {fileID: 1535211510}
   winner: {fileID: 2068418830}
   loser: {fileID: 1202177702}
-  timer: {fileID: 1702065940}
+  timer: {fileID: 1229285989}
   resources: {fileID: 531303332}
 --- !u!114 &1135671733
 MonoBehaviour:
@@ -3524,8 +3525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   season: 
+  countdown: 0
   seasonNo: 0
-  seasonLen: 10
+  seasonLen: 3
 --- !u!114 &1229285993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3540,8 +3542,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   total: 0
   netTotal: 0
-  rateResource: 20
-  rateSeconds: 3
 --- !u!114 &1229285994
 MonoBehaviour:
   m_ObjectHideFlags: 0
