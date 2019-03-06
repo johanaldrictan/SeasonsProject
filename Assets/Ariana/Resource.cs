@@ -8,11 +8,6 @@ public class Resource : MonoBehaviour
     public int total;
     public int netTotal;
 
-    public int rateResource; // rateResource / rateSeconds = rate at which 
-                             // resources are given to the player
-
-    public int rateSeconds;
-
     Stopwatch timer;
 
     public static Resource instance;

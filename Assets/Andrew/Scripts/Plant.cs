@@ -8,7 +8,7 @@ public class Plant : MonoBehaviour
 
     private Collider2D plantCollider;
     private Rigidbody2D plantRigidbody;
-    public AudioSource shootSoundSource; //CHANGE HERE
+
     public int Health = 1;            //has 10 health
     public int Damage = 1;             //does 1 damage per pellet
     private float Timer = 0f;
@@ -26,7 +26,7 @@ public class Plant : MonoBehaviour
     public int[] GoodSeasons;
     public int CostPrice;
     public bool isResourcePlant;
-
+    private AudioSource shootSoundSource;
     void Start()
     {
         //raycast in all possible directions to find where the town is.
@@ -35,11 +35,11 @@ public class Plant : MonoBehaviour
         //left Hit
         if (leftHit.collider != null)
         {
-            this.transform.Rotate(new Vector3(0, 0, 90));
+            this.transform.Rotate(new Vector3(0, 0, -90));
         }
         else if(rightHit.collider != null)
         {
-            this.transform.Rotate(new Vector3(0, 0, 270));
+            this.transform.Rotate(new Vector3(0, 0, 90));
         }
 
         plantRigidbody = GetComponent<Rigidbody2D>();
@@ -58,7 +58,7 @@ public class Plant : MonoBehaviour
             Debug.Log("ERROR: NO RIPE TIME VALUES SET, NO DEATH VALUE SET");
             Application.Quit();
         }
-        shootSoundSource = this.GetComponent<AudioSource>(); //CHANGE HERE
+        shootSoundSource = this.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -93,8 +93,8 @@ public class Plant : MonoBehaviour
         GameObject pellet = Instantiate(pelletPrefab, this.transform.position, this.transform.rotation);
         pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-        pellet.GetComponent<Rigidbody2D>().velocity = Vector2.up * 5;
-        shootSoundSource.Play(); //CHANGE HERE
+        pellet.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
+        shootSoundSource.Play();
     }
     public void Die()
     {

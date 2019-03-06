@@ -16,7 +16,7 @@ public class SeasonText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SI_meshProUGUI.text = string.Format("Season: {0}", Season.instance.season);
+        SI_meshProUGUI.text = string.Format("{0}", Season.instance.season);
         //Debug.Log(Season.instance.season)
     }
 }

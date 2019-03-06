@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class CommanderController : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class CommanderController : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public Image PlantChoiceImage;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,7 +38,7 @@ public class CommanderController : MonoBehaviour
     void Update()
     {
         //plant selection by q/w/e/r
-        PlantSelction();
+        PlantSelection();
 
         //Start Tile highlighting code
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -105,48 +108,36 @@ public class CommanderController : MonoBehaviour
             selectedPlant = selectedPlant == plants.Length - 1 ? 0 : selectedPlant + 1;
     }
 
-    void PlantSelction()
+    void PlantSelection()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        switch (Input.inputString)
         {
-            //Debug.Log("Q");
-            selectedPlant = 0;
+            case "q":
+                selectedPlant = 0;
+                break;
+            case "w":
+                selectedPlant = 1;
+                break;
+            case "e":
+                selectedPlant = 2;
+                break;
+            case "r":
+                selectedPlant = 3;
+                break;
+            case "a":
+                selectedPlant = 4;
+                break;
+            case "s":
+                selectedPlant = 5;
+                break;
+            case "d":
+                selectedPlant = 6;
+                break;
+            case "f":
+                selectedPlant = 7;
+                break;
         }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            //Debug.Log("W");
-            selectedPlant = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            //Debug.Log("E");
-            selectedPlant = 2;
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //Debug.Log("R");
-            selectedPlant = 3;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            //Debug.Log("A");
-            selectedPlant = 4;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            //Debug.Log("S");
-            selectedPlant = 5;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            //Debug.Log("D");
-            selectedPlant = 6;
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            //Debug.Log("F");
-            selectedPlant = 7;
-        }
+        PlantChoiceImage.GetComponent<Image>().sprite = plants[selectedPlant].GetComponent<SpriteRenderer>().sprite;
     }
 }
 public enum HoverState
