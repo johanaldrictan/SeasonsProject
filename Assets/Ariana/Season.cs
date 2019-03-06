@@ -25,7 +25,6 @@ public class Season : MonoBehaviour
         {
             Destroy(this);
         }
-        DontDestroyOnLoad(this);
     }
     void Start() //sets the season, starts the stopwatch
     {
