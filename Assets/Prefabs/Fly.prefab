@@ -29,7 +29,7 @@ PrefabInstance:
     - target: {fileID: 6335387953773413398, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_Name
-      value: Fly
+      value: Bug_a 2
       objectReference: {fileID: 0}
     - target: {fileID: 7175066549403252009, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
@@ -89,7 +89,7 @@ PrefabInstance:
     - target: {fileID: 7175066549403252009, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7175066549403252009, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
@@ -136,11 +136,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Health
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265980393949641314, guid: 17ac1ee823e2d5d448640971e41c8991,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 799240213501099580, guid: 17ac1ee823e2d5d448640971e41c8991,
         type: 3}
