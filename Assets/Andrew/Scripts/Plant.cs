@@ -8,7 +8,7 @@ public class Plant : MonoBehaviour
 
     private Collider2D plantCollider;
     private Rigidbody2D plantRigidbody;
-
+    public AudioSource shootSoundSource; //CHANGE HERE
     public int Health = 1;            //has 10 health
     public int Damage = 1;             //does 1 damage per pellet
     private float Timer = 0f;
@@ -58,6 +58,7 @@ public class Plant : MonoBehaviour
             Debug.Log("ERROR: NO RIPE TIME VALUES SET, NO DEATH VALUE SET");
             Application.Quit();
         }
+        shootSoundSource = this.GetComponent<AudioSource>(); //CHANGE HERE
     }
 
     void Update()
@@ -93,7 +94,7 @@ public class Plant : MonoBehaviour
         pellet.transform.position = this.transform.position;
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
         pellet.GetComponent<Rigidbody2D>().velocity = transform.up * 5;
-    
+        shootSoundSource.Play(); //CHANGE HERE
     }
     public void Die()
     {
