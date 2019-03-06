@@ -146,6 +146,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 602cfc9acb71cf04f830c0d0107f5736, type: 3}
   - {fileID: 8300000, guid: cc42dd9bd824436448c291d3f0e26104, type: 3}
   - {fileID: 8300000, guid: 42761504a9ff00e4582a50e8a3416d1b, type: 3}
+  bugDeathSounds:
+  - {fileID: 8300000, guid: 555cf54e39d576d48b7c7ce73496edd0, type: 3}
+  - {fileID: 8300000, guid: e2074d39c1ec5a247ac3dbdc8edaeb64, type: 3}
 --- !u!82 &5762183652142064824
 AudioSource:
   m_ObjectHideFlags: 0

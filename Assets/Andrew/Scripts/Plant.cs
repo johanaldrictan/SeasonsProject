@@ -9,7 +9,7 @@ public class Plant : MonoBehaviour
     private Collider2D plantCollider;
     private Rigidbody2D plantRigidbody;
 
-    public int Health = 1;            //has 1 health
+    public int Health = 1;            //has 10 health
     public int Damage = 1;             //does 1 damage per pellet
     private float Timer = 0f;
 
