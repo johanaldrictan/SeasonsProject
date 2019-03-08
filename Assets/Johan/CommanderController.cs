@@ -45,34 +45,82 @@ public class CommanderController : MonoBehaviour
         }
         selectedPlant = !resourcePlantToggle ? Season.instance.seasonNo : Season.instance.seasonNo + Season.instance.seasons.Length;
 
-        HandleArrowKeyInput();
-
         MouseOverTile();
+        //HandleArrowKeyInput();
+
         HandleMouseClick();
+        HandleSpacebar();
         
     }
+    /*
     public void HandleArrowKeyInput()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(-1, 0, 0);
             //check if in bounds
-
+            if (MapController.instance.InMapBounds(tryMoveTilePointer))
+            {
+                tilePointer = tryMoveTilePointer;
+            }
+            else
+            {
+                tilePointer = MapController.instance.allPlantableLocs[0];
+            }
+            hover_state = HoverState.HOVER;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(1, 0, 0);
+            //check if in bounds
+            if (MapController.instance.InMapBounds(tryMoveTilePointer))
+            {
+                tilePointer = tryMoveTilePointer;
+            }
+            else
+            {
+                tilePointer = MapController.instance.allPlantableLocs[0];
+            }
+            hover_state = HoverState.HOVER;
 
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(0, 1, 0);
+            //check if in bounds
+            if (MapController.instance.InMapBounds(tryMoveTilePointer))
+            {
+                tilePointer = tryMoveTilePointer;
+            }
+            else
+            {
+                tilePointer = MapController.instance.allPlantableLocs[0];
+            }
+            hover_state = HoverState.HOVER;
 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(0, -1, 0);
+            //check if in bounds
+            if (MapController.instance.InMapBounds(tryMoveTilePointer))
+            {
+                tilePointer = tryMoveTilePointer;
+            }
+            else
+            {
+                tilePointer = MapController.instance.allPlantableLocs[0];
+            }
+            hover_state = HoverState.HOVER;
 
         }
+        if (lastTileLoc != null)
+            tileSelecting.SetTile(lastTileLoc, null);
+        lastTileLoc = MapController.instance.grid.WorldToCell(tilePointer);
+        tileSelecting.SetTile(MapController.instance.grid.WorldToCell(tilePointer), tileSelector);
 
     }
+    */
     public void HandleMouseClick()
     {
         //if left click button press
@@ -86,6 +134,22 @@ public class CommanderController : MonoBehaviour
             RemovePlant();
         }
     }
+
+    public void HandleSpacebar()
+    {
+        //if left click button press
+        if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
+        {
+            PlacePlant();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER)
+        {
+            RemovePlant();
+        }
+    }
+
+
+
     public void RemovePlant()
     {
         if (MapController.instance.plantDictionary.ContainsKey(tilePointer))
@@ -143,7 +207,7 @@ public class CommanderController : MonoBehaviour
         {
             //Mouse is hovering
             //Debug.Log(mapController.GridToMap(mapController.grid.WorldToCell(hit.point)));
-            //Debug.Log(MapController.instance.grid.CellToWorld(MapController.instance.grid.WorldToCell(hit.point)));
+            Debug.Log(MapController.instance.grid.CellToWorld(MapController.instance.grid.WorldToCell(hit.point)));
             if (lastTileLoc != null)
                 tileSelecting.SetTile(lastTileLoc, null);
             lastTileLoc = MapController.instance.grid.WorldToCell(hit.point);

@@ -46,4 +46,8 @@ public class MapController : MonoBehaviour
             }
         }
     }
+    public bool InMapBounds(Vector3Int loc) 
+    {
+        return allPlantableLocs.Contains(loc);
+    }
 }
