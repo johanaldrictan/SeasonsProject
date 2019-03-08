@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //private int speed = 1;
+    private int speed = 1;
     private float TimeToLive = 0;
+    public int damage = 0;
+
     private AudioSource audioSource;
     public AudioClip[] bugHitSounds; 
 
@@ -18,6 +20,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         //move bullet
+        //this.transform.position += (this.transform.forward * Time.deltaTime * speed);
 
         TimeToLive += Time.deltaTime;
         if (TimeToLive > 3f)
@@ -30,7 +33,9 @@ public class Bullet : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             //BIG CHANGE HERE
-            int enemyHealth = collider.GetComponent<Enemy>().Health--;
+            //int enemyHealth = collider.GetComponent<Enemy>().Health--;
+            collider.GetComponent<Enemy>().Health -= damage;
+            int enemyHealth = collider.GetComponent<Enemy>().Health;
             if (enemyHealth > 0)
             {
                 audioSource.clip = bugHitSounds[Random.Range(0, bugHitSounds.Length - 1)];
@@ -43,5 +48,10 @@ public class Bullet : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
+    }
+
+    public void SetDamage(int dmg)
+    {
+        damage = dmg;
     }
 }
