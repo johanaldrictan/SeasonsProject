@@ -3205,7 +3205,7 @@ MonoBehaviour:
   plants:
   - {fileID: 3221436642166562525, guid: 2b5f3c57eb9b8a2459c91dab48dfdc44, type: 3}
   - {fileID: 2518841953273029025, guid: 058456d043d62f64784473edab4a0dbe, type: 3}
-  - {fileID: 2302958385698388527, guid: 8e650fc451f7c324e93575165dea5e77, type: 3}
+  - {fileID: 52004592574544366, guid: 8e650fc451f7c324e93575165dea5e77, type: 3}
   - {fileID: 2046057457367648520, guid: a52967d0dfb9df6469f2263a301cce1f, type: 3}
   - {fileID: 3221436642166562525, guid: d562b4027899d4641b231f5eea23cca3, type: 3}
   - {fileID: 2518841953273029025, guid: c6952acbe927407408ff30efe2cf078f, type: 3}
@@ -3773,7 +3773,7 @@ MonoBehaviour:
   season: 
   countdown: 0
   seasonNo: 0
-  seasonLen: 10
+  seasonLen: 30
 --- !u!114 &1229285993
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,27 +40,27 @@ PrefabInstance:
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: saleValue.Array.data[1]
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: saleValue.Array.data[2]
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
+      propertyPath: saleValue.Array.data[2]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
       propertyPath: ripeTime.Array.data[0]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: ripeTime.Array.data[1]
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: ripeTime.Array.data[2]
-      value: 60
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: saleValue.Array.data[0]
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -100,6 +100,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300006, guid: 2dd114dbab59d614f8da328125d128ee,
         type: 3}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
+      propertyPath: shotSpawn
+      value: 
+      objectReference: {fileID: 3098324311951201425}
     - target: {fileID: 8728086538492515363, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_Color.r
@@ -213,6 +218,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
+--- !u!1 &3098324311951201425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8228773971902103500, guid: 15b992f58a0ab434692480cf2b486199,
+    type: 3}
+  m_PrefabInstance: {fileID: 6398788098447813469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8154234832787644792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3018720989775530533, guid: 15b992f58a0ab434692480cf2b486199,

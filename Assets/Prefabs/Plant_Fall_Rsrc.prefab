@@ -45,27 +45,27 @@ PrefabInstance:
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: saleValue.Array.data[1]
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
-        type: 3}
-      propertyPath: saleValue.Array.data[2]
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
+      propertyPath: saleValue.Array.data[2]
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
+        type: 3}
       propertyPath: ripeTime.Array.data[2]
-      value: 60
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: ripeTime.Array.data[1]
-      value: 35
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: ripeTime.Array.data[0]
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
@@ -109,6 +109,8 @@ PrefabInstance:
       propertyPath: ThisPlantSpriteArray.Array.data[2]
       value: 
       objectReference: {fileID: 21300010, guid: fb3fa794c68b81844ad4de045e3cf985,
+        type: 3}
+    - target: {fileID: 8392977224901948800, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: shotSpawn
       value: 
@@ -212,12 +214,12 @@ PrefabInstance:
     - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.28125
+      value: 1.125
       objectReference: {fileID: 0}
     - target: {fileID: 3624723703450192780, guid: 15b992f58a0ab434692480cf2b486199,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.140625
+      value: 0.5625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b992f58a0ab434692480cf2b486199, type: 3}
