@@ -3722,7 +3722,6 @@ GameObject:
   - component: {fileID: 1229285990}
   - component: {fileID: 1229285993}
   - component: {fileID: 1229285992}
-  - component: {fileID: 1229285994}
   m_Layer: 0
   m_Name: UI Script Manager
   m_TagString: Untagged
@@ -3788,22 +3787,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   total: 0
   netTotal: 0
---- !u!114 &1229285994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229285989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27594d499a5129149bc1730f17ec6bd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 8196635277680198418, guid: fea94402f2659404b95c581c9dd6166b,
-    type: 3}
-  shots: []
-  amountToPool: 10
 --- !u!1 &1415879295
 GameObject:
   m_ObjectHideFlags: 0
