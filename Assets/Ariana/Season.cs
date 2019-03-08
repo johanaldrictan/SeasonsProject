@@ -9,7 +9,9 @@ public class Season : MonoBehaviour
     // Start is called before the first frame update
     public string season;
 
-    public Stopwatch timer;
+ 
+    public float time;
+
     public float countdown;
     public int seasonNo; //must be number 0-3, 0 = Spring, 1 = Summer, etc.
 
@@ -30,24 +32,27 @@ public class Season : MonoBehaviour
     {
         seasons = new string[4] { "Spring", "Summer", "Fall", "Winter"};
         this.season = this.seasons[this.seasonNo];
-        this.timer = new Stopwatch();
-        timer.Start();
+       
+        time = 0;
     }
 
     // Update is called once per frame
     void Update() //when the timer exceeds or gets to the season length, it cycles
                   //out the season
     {
+        time += Time.deltaTime;
         //UnityEngine.Debug.Log(timer.Elapsed);
-        if (timer.Elapsed.Seconds >= this.seasonLen)
+        if (time >= this.seasonLen)
         {
             //UnityEngine.Debug.Log("changed seasons");
-            timer.Reset();
+            
+            time = 0;
             this.nextSeason();
-            timer.Start();
+           
+
             countdown = seasonLen;
         }
-        countdown = seasonLen - timer.Elapsed.Seconds;
+        countdown = seasonLen - time;
         
         //UnityEngine.Debug.Log(this.season);
     }

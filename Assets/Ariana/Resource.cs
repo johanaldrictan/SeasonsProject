@@ -11,7 +11,7 @@ public class Resource : MonoBehaviour
     private int rateResource = 5;
     private float rateSeconds = 2f;
 
-    Stopwatch timer;
+    private float time;
 
     public static Resource instance;
     private void Awake()
@@ -28,8 +28,7 @@ public class Resource : MonoBehaviour
 
     void Start()
     {
-        timer = new Stopwatch();
-        timer.Start();
+        time = 0;
 
         total = 200;
         netTotal = total;
@@ -38,12 +37,13 @@ public class Resource : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer.Elapsed.Seconds>=rateSeconds)
+        time += Time.deltaTime;
+        if (time>=rateSeconds)
         {
-            timer.Reset();
+            time = 0;
             total += rateResource;
             netTotal += rateResource;
-            timer.Start();
+            
         }
     }
 

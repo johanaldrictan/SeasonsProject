@@ -12,6 +12,9 @@ public class Menu : MonoBehaviour
     public GameObject loser;
     public GameObject commander;
     public GameObject Canvas;
+    public bool inEscape;
+    public bool gameOver;
+    public GameObject escape;
 
     Scene scene1;
 
@@ -23,6 +26,8 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
         scene1 = SceneManager.GetActiveScene();
         town = GameObject.FindGameObjectWithTag("town").GetComponent<Town>();
+        inEscape = false;
+        gameOver = false;
     }
 
     // Update is called once per frame
@@ -30,6 +35,15 @@ public class Menu : MonoBehaviour
     {
         checkGame();
         //Debug.Log(Time.timeScale);
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !inEscape && !gameOver)
+        {
+            showEscape();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && inEscape)
+        {
+            hideEscape();
+        }
     }
     
     public void LoadGame()
@@ -73,9 +87,33 @@ public class Menu : MonoBehaviour
                 winner.SetActive(true);
             }
 
+            gameOver = true;
 
         }
 
     } 
+
+    public void showEscape()
+    {
+        //escape.SetActive(true);
+        inEscape = true;
+        Time.timeScale = 0;
+        Canvas.SetActive(false);
+        commander.SetActive(false);
+        escape.GetComponent<CanvasGroup>().interactable = true;
+        escape.GetComponent<CanvasGroup>().alpha = 1;
+    }
+
+    public void hideEscape()
+    {
+        //escape.SetActive(false);
+        inEscape = false;
+        Time.timeScale = 1;
+        Canvas.SetActive(true);
+        commander.SetActive(true);
+        escape.GetComponent<CanvasGroup>().interactable = false;
+        escape.GetComponent<CanvasGroup>().alpha = 0;
+
+    }
 }
 
