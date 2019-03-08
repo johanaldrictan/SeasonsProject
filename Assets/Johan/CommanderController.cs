@@ -28,6 +28,8 @@ public class CommanderController : MonoBehaviour
     public bool resourcePlantToggle;
     public int selectedPlant;
 
+    public GameObject plantPreview;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -44,6 +46,8 @@ public class CommanderController : MonoBehaviour
             resourcePlantToggle = !resourcePlantToggle;
         }
         selectedPlant = !resourcePlantToggle ? Season.instance.seasonNo : Season.instance.seasonNo + Season.instance.seasons.Length;
+
+        plantPreview.GetComponent<SpriteRenderer>().sprite = plants[selectedPlant].GetComponent<SpriteRenderer>().sprite;
 
         MouseOverTile();
         //HandleArrowKeyInput();
@@ -176,7 +180,7 @@ public class CommanderController : MonoBehaviour
             Vector3 raycast = MapController.instance.grid.GetCellCenterWorld(tilePointer);
             raycast = raycast - new Vector3(.5f, 0);
             RaycastHit2D hit = Physics2D.Raycast(raycast, Vector2.right, 3.5f);
-            Debug.DrawRay(raycast, Vector2.right, Color.yellow, 100000000);
+            //Debug.DrawRay(raycast, Vector2.right, Color.yellow, 100000000);
             if (!hit.collider.CompareTag("Enemy"))
             {
                 audioSource.clip = plantSound;
@@ -207,7 +211,7 @@ public class CommanderController : MonoBehaviour
         {
             //Mouse is hovering
             //Debug.Log(mapController.GridToMap(mapController.grid.WorldToCell(hit.point)));
-            Debug.Log(MapController.instance.grid.CellToWorld(MapController.instance.grid.WorldToCell(hit.point)));
+            //Debug.Log(MapController.instance.grid.CellToWorld(MapController.instance.grid.WorldToCell(hit.point)));
             if (lastTileLoc != null)
                 tileSelecting.SetTile(lastTileLoc, null);
             lastTileLoc = MapController.instance.grid.WorldToCell(hit.point);

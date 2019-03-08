@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private int speed = 1;
+    private int speed = 5;
+    private int seasonAttribute;
     private float TimeToLive = 0;
     public int damage = 0;
 
@@ -20,7 +21,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         //move bullet
-        //this.transform.position += (this.transform.forward * Time.deltaTime * speed);
+        this.GetComponent<Rigidbody2D>().velocity = (this.transform.up * speed);
 
         TimeToLive += Time.deltaTime;
         if (TimeToLive > 3f)
@@ -36,6 +37,11 @@ public class Bullet : MonoBehaviour
             //int enemyHealth = collider.GetComponent<Enemy>().Health--;
             collider.GetComponent<Enemy>().Health -= damage;
             int enemyHealth = collider.GetComponent<Enemy>().Health;
+            if (seasonAttribute == 3)
+            {
+                //Debug.Log("slowed");
+                collider.GetComponent<Enemy>().SetSlow();
+            }
             if (enemyHealth > 0)
             {
                 audioSource.clip = bugHitSounds[Random.Range(0, bugHitSounds.Length - 1)];
@@ -53,5 +59,9 @@ public class Bullet : MonoBehaviour
     public void SetDamage(int dmg)
     {
         damage = dmg;
+    }
+    public void SetSeasonAttribute(int attr)
+    {
+        seasonAttribute = attr;
     }
 }

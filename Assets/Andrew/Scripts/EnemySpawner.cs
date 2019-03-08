@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public int[] resourceLevels;
     public float[] SpawnThresholds;
 
-    private int currLevel;
+    private int currLevel = 0;
 
     //gives the player one full season to plan ahead
     private int StartSeason;
@@ -30,6 +30,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] Bag5;
 
     public Vector3[] spawnCoords;
+
+    public int[] healthBonus;
 
 
     public static EnemySpawner instance;
@@ -93,6 +95,11 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log("ERROR: NOT CORRECT AMOUNT OF SPAWN THRESHOLDS");
             Application.Quit();
         }
+        if (healthBonus.Length != Bags.Count)
+        {
+            Debug.Log("ERROR: NO CHANGES TO ENEMY HEALTH");
+            Application.Quit();
+        }
     }
 
     void Update()
@@ -149,6 +156,11 @@ public class EnemySpawner : MonoBehaviour
             Bag[i] = Bag[r];
             Bag[r] = copy;
         }
+    }
+
+    public int getCurrHealthBonus()
+    {
+        return healthBonus[currLevel];
     }
 
 

@@ -78,7 +78,7 @@ public class Plant : MonoBehaviour
         if (CheckGoodSeason()) //if it is a good season for the plant, normal growth rate
         {
             Timer += Time.deltaTime;
-            shootTickRate = .8f;
+            shootTickRate = .6f;
         }
         else //slow growth rate out of season
         {
@@ -91,47 +91,81 @@ public class Plant : MonoBehaviour
 
         if (shootTickValue > shootTickRate && !isResourcePlant)
         {
-            Shoot();
+            StartCoroutine(Shoot());
             shootTickValue = 0f;
         }
 
         GrowPlant();
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
         if (CheckGoodSeason() && Season.instance.seasonNo == 0)
         {
+            //Debug.Log("Spring plant shoot");
             GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
             pellet.transform.position = shotSpawn.transform.position;
             pellet.GetComponent<Bullet>().SetDamage(2);
             Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-            pellet.GetComponent<Rigidbody2D>().velocity = shotSpawn.transform.up * 5;
             shootSoundSource.Play();
         }
         else if (CheckGoodSeason() && Season.instance.seasonNo == 1)
         {
+            //Debug.Log("Summer plant shoot");
             GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
             pellet.transform.position = shotSpawn.transform.position;
+            pellet.GetComponent<Bullet>().SetDamage(1);
             Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-            //pellet.transform.Rotate(new Vector3(0, 0, 30));
-            //pellet.GetComponent<Rigidbody2D>().velocity = shotSpawn.transform.up * 5 * Mathf.Cos(30);
+            pellet.transform.Rotate(new Vector3(0, 0, 15));
+
+            GameObject pellet1 = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet1.transform.position = shotSpawn.transform.position;
+            pellet1.GetComponent<Bullet>().SetDamage(1);
+            Physics2D.IgnoreCollision(plantCollider, pellet1.GetComponent<Collider2D>());
+
+            GameObject pellet2 = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet2.transform.position = shotSpawn.transform.position;
+            pellet2.GetComponent<Bullet>().SetDamage(1);
+            Physics2D.IgnoreCollision(plantCollider, pellet2.GetComponent<Collider2D>());
+            pellet2.transform.Rotate(new Vector3(0, 0, -15));
 
             shootSoundSource.Play();
         }
         else if (CheckGoodSeason() && Season.instance.seasonNo == 2)
         {
-
+            //Debug.Log("Fall plant shoot");
+            GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet.transform.position = shotSpawn.transform.position;
+            pellet.GetComponent<Bullet>().SetDamage(1);
+            Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
+            shootSoundSource.Play();
+            yield return new WaitForSeconds(1f);
+            GameObject pellet1 = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet1.transform.position = shotSpawn.transform.position;
+            pellet1.GetComponent<Bullet>().SetDamage(1);
+            Physics2D.IgnoreCollision(plantCollider, pellet1.GetComponent<Collider2D>());
+            shootSoundSource.Play();
         }
         else if (CheckGoodSeason() && Season.instance.seasonNo == 3)
         {
-
+            //Debug.Log("Winter plant shoot");
+            GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet.transform.position = shotSpawn.transform.position;
+            pellet.GetComponent<Bullet>().SetDamage(1);
+            pellet.GetComponent<Bullet>().SetSeasonAttribute(3);
+            Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
+            shootSoundSource.Play();
         }
         else
         {
-
+            //Debug.Log("Base plant shoot");
+            GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet.transform.position = shotSpawn.transform.position;
+            pellet.GetComponent<Bullet>().SetDamage(1);
+            Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
+            shootSoundSource.Play();
         }
-
+        yield return null;
 
         /*GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
         pellet.transform.position = shotSpawn.transform.position;
@@ -182,7 +216,7 @@ public class Plant : MonoBehaviour
             }
         }
 
-        return currentSalePrice;
+        return (Season.instance.seasonNo == 3) ? 0 : currentSalePrice;
     }
     //ex: saleValue:      0      80      40
     //    ripeTime:  (0)     30      45      70 (last digit used for TTL)
