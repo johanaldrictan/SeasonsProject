@@ -32,6 +32,7 @@ public class Plant : MonoBehaviour
     private AudioSource shootSoundSource;
 
     public Sprite[] ThisPlantSpriteArray;
+
     void Start()
     {
         //raycast in all possible directions to find where the town is.
@@ -68,21 +69,21 @@ public class Plant : MonoBehaviour
 
     void Update()
     {
-        if (Timer >= ripeTime[ripeTime.Length - 1] || Health <= 0) //last index of ripeTime, the TTL
+        /*if (Timer >= ripeTime[ripeTime.Length - 1] || Health <= 0) //last index of ripeTime, the TTL
         {
             //Destroy or something related to removing it, maybe animation idk
             Die();
-        }
+        }*/
 
-        if (CheckGoodSeason()) //if it is a good season for the plant normal decay
+        if (CheckGoodSeason()) //if it is a good season for the plant, normal growth rate
         {
             Timer += Time.deltaTime;
             shootTickRate = .8f;
         }
-        else //sped up decay rate
+        else //slow growth rate out of season
         {
-            Timer = Timer + (3 * Time.deltaTime);
-            shootTickRate = 1f;
+            Timer = Timer + (Time.deltaTime / 2);
+            shootTickRate = 1.1f;
         }
 
         if (shootTickRate != 0f)
@@ -93,16 +94,51 @@ public class Plant : MonoBehaviour
             Shoot();
             shootTickValue = 0f;
         }
+
         GrowPlant();
     }
 
     void Shoot()
     {
-        GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+        if (CheckGoodSeason() && Season.instance.seasonNo == 0)
+        {
+            GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet.transform.position = shotSpawn.transform.position;
+            pellet.GetComponent<Bullet>().SetDamage(2);
+            Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
+            pellet.GetComponent<Rigidbody2D>().velocity = shotSpawn.transform.up * 5;
+            shootSoundSource.Play();
+        }
+        else if (CheckGoodSeason() && Season.instance.seasonNo == 1)
+        {
+            GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
+            pellet.transform.position = shotSpawn.transform.position;
+            Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
+            //pellet.transform.Rotate(new Vector3(0, 0, 30));
+            //pellet.GetComponent<Rigidbody2D>().velocity = shotSpawn.transform.up * 5 * Mathf.Cos(30);
+
+            shootSoundSource.Play();
+        }
+        else if (CheckGoodSeason() && Season.instance.seasonNo == 2)
+        {
+
+        }
+        else if (CheckGoodSeason() && Season.instance.seasonNo == 3)
+        {
+
+        }
+        else
+        {
+
+        }
+
+
+        /*GameObject pellet = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
         pellet.transform.position = shotSpawn.transform.position;
+        pellet.GetComponent<Bullet>().SetDamage(2);
         Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
         pellet.GetComponent<Rigidbody2D>().velocity = shotSpawn.transform.up * 5;
-        shootSoundSource.Play();
+        shootSoundSource.Play();*/
     }
     public void Die()
     {
@@ -146,9 +182,7 @@ public class Plant : MonoBehaviour
             }
         }
 
-        if (CheckGoodSeason())
-            return currentSalePrice;
-        return currentSalePrice / 2;
+        return currentSalePrice;
     }
     //ex: saleValue:      0      80      40
     //    ripeTime:  (0)     30      45      70 (last digit used for TTL)
