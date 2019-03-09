@@ -8,8 +8,8 @@ public class Season : MonoBehaviour
     public static Season instance;
     // Start is called before the first frame update
     public string season;
-
- 
+    private AudioSource seasonChimeSource;
+    public AudioClip[] seasonChimes;
     public float time;
 
     public float countdown;
@@ -34,6 +34,10 @@ public class Season : MonoBehaviour
         this.season = this.seasons[this.seasonNo];
        
         time = 0;
+
+        seasonChimeSource = this.GetComponent<AudioSource>();
+        this.seasonChimeSource.clip = this.seasonChimes[this.seasonNo];
+        seasonChimeSource.Play();
     }
 
     // Update is called once per frame
@@ -48,8 +52,6 @@ public class Season : MonoBehaviour
             
             time = 0;
             this.nextSeason();
-           
-
             countdown = seasonLen;
         }
         countdown = seasonLen - time;
@@ -64,6 +66,8 @@ public class Season : MonoBehaviour
         else
             ++this.seasonNo;
         this.season = this.seasons[this.seasonNo];
+        seasonChimeSource.clip = seasonChimes[this.seasonNo];
+        seasonChimeSource.Play();
         //UnityEngine.Debug.Log(season);
     }
 }
