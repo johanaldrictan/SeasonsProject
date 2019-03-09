@@ -82,10 +82,10 @@ public class Menu : MonoBehaviour
                 loser.SetActive(true);
             }
 
-            if (false)
-            {
-                winner.SetActive(true);
-            }
+            //if (false)
+            //{
+            //    winner.SetActive(true);
+            //}
 
             gameOver = true;
 

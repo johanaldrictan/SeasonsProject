@@ -27,6 +27,7 @@ public class CommanderController : MonoBehaviour
 
     public bool resourcePlantToggle;
     public int selectedPlant;
+    public bool arrowKeysToggle;
 
     public GameObject plantPreview;
 
@@ -49,18 +50,23 @@ public class CommanderController : MonoBehaviour
 
         plantPreview.GetComponent<SpriteRenderer>().sprite = plants[selectedPlant].GetComponent<SpriteRenderer>().sprite;
 
-        MouseOverTile();
-        //HandleArrowKeyInput();
+        //if mouse has moved in any way
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+            arrowKeysToggle = false;
+
+        if (!arrowKeysToggle)
+            MouseOverTile();
+        HandleArrowKeyInput();
 
         HandleMouseClick();
         HandleSpacebar();
         
     }
-    /*
     public void HandleArrowKeyInput()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            arrowKeysToggle = true;
             Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(-1, 0, 0);
             //check if in bounds
             if (MapController.instance.InMapBounds(tryMoveTilePointer))
@@ -75,6 +81,7 @@ public class CommanderController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            arrowKeysToggle = true;
             Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(1, 0, 0);
             //check if in bounds
             if (MapController.instance.InMapBounds(tryMoveTilePointer))
@@ -90,6 +97,7 @@ public class CommanderController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            arrowKeysToggle = true;
             Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(0, 1, 0);
             //check if in bounds
             if (MapController.instance.InMapBounds(tryMoveTilePointer))
@@ -105,6 +113,7 @@ public class CommanderController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            arrowKeysToggle = true;
             Vector3Int tryMoveTilePointer = tilePointer + new Vector3Int(0, -1, 0);
             //check if in bounds
             if (MapController.instance.InMapBounds(tryMoveTilePointer))
@@ -120,11 +129,11 @@ public class CommanderController : MonoBehaviour
         }
         if (lastTileLoc != null)
             tileSelecting.SetTile(lastTileLoc, null);
-        lastTileLoc = MapController.instance.grid.WorldToCell(tilePointer);
-        tileSelecting.SetTile(MapController.instance.grid.WorldToCell(tilePointer), tileSelector);
+        lastTileLoc = tilePointer;
+        tileSelecting.SetTile(tilePointer, tileSelector);
 
     }
-    */
+    
     public void HandleMouseClick()
     {
         //if left click button press
@@ -211,7 +220,7 @@ public class CommanderController : MonoBehaviour
         {
             //Mouse is hovering
             //Debug.Log(mapController.GridToMap(mapController.grid.WorldToCell(hit.point)));
-            //Debug.Log(MapController.instance.grid.CellToWorld(MapController.instance.grid.WorldToCell(hit.point)));
+            //Debug.Log(MapController.instance.grid.WorldToCell(hit.point));
             if (lastTileLoc != null)
                 tileSelecting.SetTile(lastTileLoc, null);
             lastTileLoc = MapController.instance.grid.WorldToCell(hit.point);
