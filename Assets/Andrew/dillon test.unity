@@ -1982,6 +1982,7 @@ MonoBehaviour:
   fallColor: {r: 1, g: 0.72851, b: 0, a: 1}
   winterColor: {r: 1, g: 1, b: 1, a: 1}
   allPlantableLocs: []
+  tilePointerLocs: []
 --- !u!1 &798982268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4568848294113149194, guid: cefc776af420fa04d8d28e2252ef60df,
@@ -3640,6 +3641,17 @@ PrefabInstance:
       propertyPath: plantPreview
       value: 
       objectReference: {fileID: 877869734}
+    - target: {fileID: 4568848294113149195, guid: cefc776af420fa04d8d28e2252ef60df,
+        type: 3}
+      propertyPath: plantableTile
+      value: 
+      objectReference: {fileID: 11400000, guid: 104e5998a436d3b4ab17e29afb058e2e,
+        type: 2}
+    - target: {fileID: 4568848294113149195, guid: cefc776af420fa04d8d28e2252ef60df,
+        type: 3}
+      propertyPath: tilePurchasePrice
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cefc776af420fa04d8d28e2252ef60df, type: 3}
 --- !u!1001 &8219223555847503709

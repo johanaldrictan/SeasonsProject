@@ -18,6 +18,7 @@ public class MapController : MonoBehaviour
     public Color winterColor;
 
     public List<Vector3Int> allPlantableLocs;
+    public List<Vector3Int> tilePointerLocs;
 
     //lists all of the plants currently in the map. opted for dictionary to make system independent since the planting field will not necessarily be square
     public Dictionary<Vector3Int, Plant> plantDictionary;
@@ -72,13 +73,29 @@ public class MapController : MonoBehaviour
                 }
             }
         }
+        for (int x = expansionTiles.cellBounds.xMin; x < expansionTiles.cellBounds.xMax; x++)
+        {
+            for (int y = expansionTiles.cellBounds.yMin; y < expansionTiles.cellBounds.yMax; y++)
+            {
+                Vector3Int localPlace = (new Vector3Int(x, y, 0));
+                if (expansionTiles.HasTile(localPlace))
+                {
+                    //Tile at "place"
+                    tilePointerLocs.Add(localPlace);
+                }
+            }
+        }
     }
     private void ChangeTileColor(Color color)
     {
         nonPlantableTiles.color = color;
         expansionTiles.color = color;
     }
-    public bool InMapBounds(Vector3Int loc) 
+    public bool InMapBounds(Vector3Int loc)
+    {
+        return allPlantableLocs.Contains(loc) || tilePointerLocs.Contains(loc);
+    }
+    public bool InPlantableBounds(Vector3Int loc) 
     {
         return allPlantableLocs.Contains(loc);
     }

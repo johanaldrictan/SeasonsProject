@@ -16,6 +16,7 @@ public class CommanderController : MonoBehaviour
     public Tilemap tileSelecting;
 
     public TileBase tileSelector;
+    public TileBase plantableTile;
 
     public Plant[] plants;
 
@@ -28,6 +29,8 @@ public class CommanderController : MonoBehaviour
     public bool resourcePlantToggle;
     public int selectedPlant;
     public bool arrowKeysToggle;
+
+    public int tilePurchasePrice;
 
     public GameObject plantPreview;
 
@@ -136,32 +139,57 @@ public class CommanderController : MonoBehaviour
     
     public void HandleMouseClick()
     {
-        //if left click button press
-        if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
+        if (MapController.instance.InPlantableBounds(tilePointer))
         {
-            PlacePlant();
+            //if left click button press
+            if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
+            {
+                PlacePlant();
+            }
+            //if right click button press
+            else if (Input.GetMouseButton(1) && hover_state == HoverState.HOVER)
+            {
+                RemovePlant();
+            }
         }
-        //if right click button press
-        else if (Input.GetMouseButton(1) && hover_state == HoverState.HOVER)
+        else if (MapController.instance.InMapBounds(tilePointer))
         {
-            RemovePlant();
+            if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= tilePurchasePrice && !MapController.instance.InPlantableBounds(tilePointer))
+            {
+                BuyTile();
+            }
         }
     }
 
     public void HandleSpacebar()
     {
-        //if left click button press
-        if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
+        if (MapController.instance.InPlantableBounds(tilePointer))
         {
-            PlacePlant();
+            //if left click button press
+            if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
+            {
+                PlacePlant();
+            }
+            else if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER)
+            {
+                RemovePlant();
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER)
+        else if (MapController.instance.InMapBounds(tilePointer))
         {
-            RemovePlant();
+            if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER && Resource.instance.total >= tilePurchasePrice && !MapController.instance.InPlantableBounds(tilePointer))
+            {
+                BuyTile();
+            }
         }
     }
 
-
+    public void BuyTile()
+    {
+        Resource.instance.Spend(tilePurchasePrice);
+        MapController.instance.plantableTiles.SetTile(tilePointer, plantableTile);
+        MapController.instance.allPlantableLocs.Add(tilePointer);
+    }
 
     public void RemovePlant()
     {
