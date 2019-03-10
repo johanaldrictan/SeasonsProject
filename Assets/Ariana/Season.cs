@@ -64,6 +64,7 @@ public class Season : MonoBehaviour
         else
             ++this.seasonNo;
         this.season = this.seasons[this.seasonNo];
+        MapController.instance.ChangeSeason();
         //UnityEngine.Debug.Log(season);
     }
 }

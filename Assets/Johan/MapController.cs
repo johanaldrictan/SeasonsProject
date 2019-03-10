@@ -9,6 +9,14 @@ public class MapController : MonoBehaviour
     public Grid grid;
     public Tilemap plantableTiles;
 
+    public Tilemap nonPlantableTiles;
+    public Tilemap expansionTiles;
+
+    public Color springColor;
+    public Color summerColor;
+    public Color fallColor;
+    public Color winterColor;
+
     public List<Vector3Int> allPlantableLocs;
 
     //lists all of the plants currently in the map. opted for dictionary to make system independent since the planting field will not necessarily be square
@@ -30,6 +38,25 @@ public class MapController : MonoBehaviour
         plantDictionary = new Dictionary<Vector3Int, Plant>();
         allPlantableLocs = new List<Vector3Int>();
         GetPlantableMap();
+        ChangeSeason();
+    }
+    public void ChangeSeason()
+    {
+        switch (Season.instance.seasonNo)
+        {
+            case 0:
+                ChangeTileColor(springColor);
+                break;
+            case 1:
+                ChangeTileColor(summerColor);
+                break;
+            case 2:
+                ChangeTileColor(fallColor);
+                break;
+            case 3:
+                ChangeTileColor(winterColor);
+                break;
+        }
     }
     private void GetPlantableMap()
     {
@@ -45,6 +72,11 @@ public class MapController : MonoBehaviour
                 }
             }
         }
+    }
+    private void ChangeTileColor(Color color)
+    {
+        nonPlantableTiles.color = color;
+        expansionTiles.color = color;
     }
     public bool InMapBounds(Vector3Int loc) 
     {
