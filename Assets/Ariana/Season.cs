@@ -67,6 +67,7 @@ public class Season : MonoBehaviour
             ++this.seasonNo;
         this.season = this.seasons[this.seasonNo];
         MapController.instance.ChangeSeason();
+        EnemySpawner.instance.healthBonusSeason++;
         seasonChimeSource.clip = seasonChimes[this.seasonNo];
         seasonChimeSource.Play();
         //UnityEngine.Debug.Log(season);
