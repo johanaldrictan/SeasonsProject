@@ -71,8 +71,8 @@ public class EnemySpawner : MonoBehaviour
         if (Bag5.Length > 0)
             Bags.Add(Bag5);
 
-        Debug.Log(Bags.Count);
-        Debug.Log(resourceLevels.Length);
+        Debug.Log("Bags: " + Bags.Count);
+        Debug.Log("Resource Levels: " + resourceLevels.Length);
 
         //error check
         if (Bags.Count < 1)

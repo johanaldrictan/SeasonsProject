@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Andre/MainMenu.unity
     guid: ca5939a4079326442a3dde8687d1efaf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Andrew/dillon test.unity
     guid: d86b779d97ca74f4d93f642edf50814e
+  - enabled: 1
+    path: Assets/Andrew/playtesting values.unity
+    guid: 7cba586ac42927a4ebd8de92bba6c2d1
   m_configObjects: {}

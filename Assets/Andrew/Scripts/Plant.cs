@@ -12,8 +12,9 @@ public class Plant : MonoBehaviour
 
     public GameObject shotSpawn;
 
-    public int Health = 1;            //has 10 health
-    public int Damage = 1;             //does 1 damage per pellet
+    public int Health = 1;              //has 10 health
+    private int initialHealthRef;       //no use other than for an if statement
+    public int Damage = 1;              //does 1 damage per pellet
     private float Timer = 0f;
 
     private float shootTickValue = 0f;  //value for tracking time between shots
@@ -35,6 +36,8 @@ public class Plant : MonoBehaviour
 
     void Start()
     {
+        initialHealthRef = Health;
+
         //raycast in all possible directions to find where the town is.
         RaycastHit2D leftHit = Physics2D.Raycast(this.transform.position, Vector2.left);
         RaycastHit2D rightHit = Physics2D.Raycast(this.transform.position, Vector2.right);
@@ -186,7 +189,13 @@ public class Plant : MonoBehaviour
         {
             //Health = Health - bug.GetDmg();
             Health--;
+            if (initialHealthRef > 1)
+                this.transform.GetComponentInChildren<PlantHealth>().DecreaseHealth(1);
             Debug.Log(Health);
+            if (Health <= 0)
+            {
+                Die();
+            }
         }
     }
 
