@@ -14,7 +14,11 @@ public class Menu : MonoBehaviour
     public GameObject Canvas;
     public bool inEscape;
     public bool gameOver;
+    private bool notPlaying;
     public GameObject escape;
+    public AudioClip endingMusic;
+
+    private AudioSource PlaySource;
 
     Scene scene1;
 
@@ -28,6 +32,8 @@ public class Menu : MonoBehaviour
         town = GameObject.FindGameObjectWithTag("town").GetComponent<Town>();
         inEscape = false;
         gameOver = false;
+        notPlaying = true;
+        PlaySource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +50,14 @@ public class Menu : MonoBehaviour
         {
             hideEscape();
         }
+
+        if (gameOver && notPlaying)
+        {
+            PlaySource.clip = this.endingMusic;
+            PlaySource.volume = 0.7f;
+            PlaySource.Play();
+            notPlaying = false;
+        }
     }
     
     public void LoadGame()
@@ -53,8 +67,9 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
+        notPlaying = true;
+        PlaySource.volume = 1.0f;
         SceneManager.LoadScene(scene1.name);
-
     }
 
     public void QuitGame()
