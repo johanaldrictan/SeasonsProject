@@ -10,6 +10,7 @@ public class Season : MonoBehaviour
     public string season;
     private AudioSource seasonChimeSource;
     public AudioClip[] seasonChimes;
+    public AudioClip[] seasonSongs;
     public float time;
 
     public float countdown;
@@ -55,7 +56,11 @@ public class Season : MonoBehaviour
             countdown = seasonLen;
         }
         countdown = seasonLen - time;
-        
+        if (seasonChimeSource.isPlaying == false)
+        {
+            seasonChimeSource.clip = seasonSongs[this.seasonNo];
+            seasonChimeSource.Play();
+        }
         //UnityEngine.Debug.Log(this.season);
     }
 

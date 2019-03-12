@@ -177,6 +177,7 @@ MonoBehaviour:
   - {x: 6, y: -1.5, z: 0}
   - {x: 6, y: -2.5, z: 0}
   healthBonus: 000000000200000004000000070000000a000000
+  healthBonusSeason: 0
 --- !u!4 &39597849
 Transform:
   m_ObjectHideFlags: 0
@@ -2497,6 +2498,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bcfdb888b9c3f694c955946ae8566acc, type: 3}
   - {fileID: 8300000, guid: b4928bd677157b44588dc6f3691fbacc, type: 3}
   - {fileID: 8300000, guid: 0b8e4c632e76c9c4fa62caf7d8537f4d, type: 3}
+  seasonSongs:
+  - {fileID: 8300000, guid: 0e7f9510d43f49f4086c7b86cf1d3b26, type: 3}
+  - {fileID: 8300000, guid: 41e70c36704fedc409ab27b1e52db224, type: 3}
+  - {fileID: 8300000, guid: 41e70c36704fedc409ab27b1e52db224, type: 3}
+  - {fileID: 8300000, guid: 41e70c36704fedc409ab27b1e52db224, type: 3}
   time: 0
   countdown: 0
   seasonNo: 0
