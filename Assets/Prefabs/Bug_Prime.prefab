@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 799240213501099580}
   - component: {fileID: 8616689858796915609}
   - component: {fileID: 543556043288840915}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bug_Prime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
