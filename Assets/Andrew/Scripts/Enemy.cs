@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         slowTimer = 0f;
-        slowedSpeed = WalkSpeed / 2;
+        slowedSpeed = WalkSpeed / 1.5f;
         this.Health += EnemySpawner.instance.getCurrHealthBonus();
     }
 

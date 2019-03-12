@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
         this.GetComponent<Rigidbody2D>().velocity = (this.transform.up * speed);
 
         TimeToLive += Time.deltaTime;
-        if (TimeToLive > 3f)
+        if (TimeToLive >= 1.8f)
             //gameObject.SetActive(false);
             Destroy(this.gameObject);
     }
@@ -36,6 +36,7 @@ public class Bullet : MonoBehaviour
             //BIG CHANGE HERE
             //int enemyHealth = collider.GetComponent<Enemy>().Health--;
             collider.GetComponent<Enemy>().Health -= damage;
+            collider.GetComponent<Enemy>().GetComponentInChildren<EnemyHealth>().DecreaseHealth(damage);
             int enemyHealth = collider.GetComponent<Enemy>().Health;
             if (seasonAttribute == 3)
             {
