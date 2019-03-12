@@ -13,7 +13,7 @@ public class Town : MonoBehaviour
 
     private void Update()
     {
-        if (health == 0)
+        if (health <= 0)
         {
             //Debug.Log("--GAME OVER--");
             gameOver = true;
