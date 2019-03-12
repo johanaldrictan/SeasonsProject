@@ -148,7 +148,7 @@ public class CommanderController : MonoBehaviour
         tileSelecting.SetTile(tilePointer, tileSelector);
 
     }
-    
+
     public void HandleMouseClick()
     {
         if (MapController.instance.InPlantableBounds(tilePointer))
@@ -182,7 +182,7 @@ public class CommanderController : MonoBehaviour
             {
                 PlacePlant();
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER)
+            else if (Input.GetKeyDown(KeyCode.Space) && hover_state == HoverState.HOVER && MapController.instance.plantDictionary.ContainsKey(tilePointer))
             {
                 RemovePlant();
             }
