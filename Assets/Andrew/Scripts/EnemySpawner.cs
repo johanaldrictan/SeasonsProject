@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
     public Vector3[] spawnCoords;
 
     public int[] healthBonus;
+    public int healthBonusSeason; //increments every new season;
 
 
     public static EnemySpawner instance;
@@ -71,8 +72,10 @@ public class EnemySpawner : MonoBehaviour
         if (Bag5.Length > 0)
             Bags.Add(Bag5);
 
-        Debug.Log(Bags.Count);
-        Debug.Log(resourceLevels.Length);
+        healthBonusSeason = 0;
+
+        Debug.Log("Bags: " + Bags.Count);
+        Debug.Log("Resource Levels: " + resourceLevels.Length);
 
         //error check
         if (Bags.Count < 1)

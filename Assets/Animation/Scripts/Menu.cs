@@ -48,7 +48,7 @@ public class Menu : MonoBehaviour
     
     public void LoadGame()
     {
-        SceneManager.LoadScene("dillon test");
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     public void StartGame()

@@ -33,6 +33,8 @@ public class CommanderController : MonoBehaviour
     public int tilePurchasePrice;
 
     public GameObject plantPreview;
+    public Sprite[] previewSprites;
+    public Text priceText;
 
     void Start()
     {
@@ -51,7 +53,17 @@ public class CommanderController : MonoBehaviour
         }
         selectedPlant = !resourcePlantToggle ? Season.instance.seasonNo : Season.instance.seasonNo + Season.instance.seasons.Length;
 
-        plantPreview.GetComponent<SpriteRenderer>().sprite = plants[selectedPlant].GetComponent<SpriteRenderer>().sprite;
+        if (selectedPlant < 4)
+        {
+            plantPreview.transform.localScale = new Vector3(70f, 70f, 70f);
+        }
+        else
+        {
+            plantPreview.transform.localScale = new Vector3(40f, 40f, 40f);
+        }
+        priceText.text = "$" + plants[selectedPlant].CostPrice;
+
+        plantPreview.GetComponent<SpriteRenderer>().sprite = previewSprites[selectedPlant];
 
         //if mouse has moved in any way
         if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
