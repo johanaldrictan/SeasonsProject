@@ -80,7 +80,7 @@ public class Menu : MonoBehaviour
     
     public void checkGame()
     {
-        if (town.gameOver)
+        if (town.gameOver || Season.instance.year == 2)
         {
             //pause stuff
             Time.timeScale = 0;
@@ -95,7 +95,10 @@ public class Menu : MonoBehaviour
             {
                 winner.SetActive(true);
             }
-            else { loser.SetActive(true); }
+            else if (town.gameOver)
+            {
+                loser.SetActive(true);
+            }
 
             gameOver = true;
 
