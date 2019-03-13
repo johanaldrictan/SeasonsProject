@@ -61,7 +61,7 @@ public class CommanderController : MonoBehaviour
         {
             plantPreview.transform.localScale = new Vector3(40f, 40f, 40f);
         }
-        priceText.text = "$" + plants[selectedPlant].CostPrice;
+        priceText.text = "Cost: $" + plants[selectedPlant].CostPrice;
 
         plantPreview.GetComponent<SpriteRenderer>().sprite = previewSprites[selectedPlant];
 

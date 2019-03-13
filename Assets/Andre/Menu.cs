@@ -90,17 +90,12 @@ public class Menu : MonoBehaviour
             //menu appear
             playAgain.SetActive(true);
             quitGame.SetActive(true);
-            
 
-            if (true)
+            if (Season.instance.year == 2)
             {
-                loser.SetActive(true);
+                winner.SetActive(true);
             }
-
-            //if (false)
-            //{
-            //    winner.SetActive(true);
-            //}
+            else { loser.SetActive(true); }
 
             gameOver = true;
 

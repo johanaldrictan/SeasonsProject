@@ -10,7 +10,7 @@ public class UI_Manager : MonoBehaviour
 
     void Update()
     {
-        resources.text = "$" + Resource.instance.total.ToString();
+        resources.text = "Gold: $" + Resource.instance.total.ToString();
         timer.text = Season.instance.countdown.ToString("F1");
     }
 }
