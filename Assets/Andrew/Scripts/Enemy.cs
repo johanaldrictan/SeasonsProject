@@ -66,6 +66,7 @@ public class Enemy : MonoBehaviour
             this.GetComponent<Rigidbody2D>().AddForce(Vector3.right * force); // bug gets pushed back after hitting plant
             Random rnd = new Random();
             this.GetComponent<AudioSource>().clip = bugChomps[Random.Range(0,7)];
+            this.GetComponent<AudioSource>().Play();
         }
     }
 
