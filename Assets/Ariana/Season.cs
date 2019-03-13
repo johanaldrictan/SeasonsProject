@@ -74,7 +74,7 @@ public class Season : MonoBehaviour
         {
             this.seasonNo = 0;
             year++;
-            Debug.Log("Year " + year);
+            print("Year " + year);
         }
         else
             ++this.seasonNo;
