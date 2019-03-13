@@ -2770,7 +2770,7 @@ MonoBehaviour:
   inEscape: 0
   gameOver: 0
   escape: {fileID: 1788401269}
-  endingMusic: {fileID: 0}
+  endingMusic: {fileID: 8300000, guid: a6bb1de7219852e42b6619f9e9369acf, type: 3}
 --- !u!82 &1229285995
 AudioSource:
   m_ObjectHideFlags: 0
