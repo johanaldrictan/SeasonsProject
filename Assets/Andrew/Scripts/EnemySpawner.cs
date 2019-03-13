@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public float Timer;
     private float TimerThreshold;
-    //private float subTimerThreshold;
+    private float subTimerThreshold;
 
     private int currBag = 0;
 
