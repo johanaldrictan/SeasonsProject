@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     private float slowTimer;
 
+    public AudioClip[] bugChomps; 
 
     public Plant plant;
 
@@ -63,6 +64,8 @@ public class Enemy : MonoBehaviour
         else if (collision.gameObject.CompareTag("plant") && collision.gameObject.GetComponent<Plant>().isResourcePlant == false)
         {
             this.GetComponent<Rigidbody2D>().AddForce(Vector3.right * force); // bug gets pushed back after hitting plant
+            Random rnd = new Random();
+            this.GetComponent<AudioSource>().clip = bugChomps[Random.Range(0,7)];
         }
     }
 
