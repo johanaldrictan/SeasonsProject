@@ -74,6 +74,7 @@ public class Season : MonoBehaviour
         {
             this.seasonNo = 0;
             year++;
+
             UnityEngine.Debug.Log("Year " + year);
         }
         else
