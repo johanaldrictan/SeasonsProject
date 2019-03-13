@@ -1,0 +1,13 @@
+--Credits--
+
+Art:
+game sprites:
+	*Neoriceisgood (source:deviantart website): moth, fly, caterpillar, summer flower, 
+						winter flower, fall plant, spring flower
+
+	*chasz-manequin (source: deviantart website): houses
+	
+	*unknown (source: http://pixelartmaker.com/art/b9585128f9cb997): snowflake
+
+	*Diana Melgarejo (source: self): fall leaf, spring leaf, sun, spring radish, corn, 
+					pumpkin, potato
