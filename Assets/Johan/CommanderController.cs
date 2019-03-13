@@ -148,26 +148,22 @@ public class CommanderController : MonoBehaviour
     }
     public void HandleInputClick()
     {
-        bool hasLeftClick = Input.GetMouseButtonDown(0);
-        bool hasRightClick = Input.GetMouseButton(1);
-        bool hasSpaceBar = Input.GetKeyDown(KeyCode.Space);
-
         if (MapController.instance.InPlantableBounds(tilePointer))
         {
             //if left click button press
-            if ((hasLeftClick || hasSpaceBar) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
+            if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= plants[selectedPlant].CostPrice)
             {
                 PlacePlant();
             }
             //if right click button press
-            else if ((hasRightClick || hasSpaceBar) && hover_state == HoverState.HOVER)
+            else if (Input.GetMouseButton(1) && hover_state == HoverState.HOVER)
             {
                 RemovePlant();
             }
         }
         else if (MapController.instance.InMapBounds(tilePointer))
         {
-            if ((hasLeftClick || hasSpaceBar) && hover_state == HoverState.HOVER && Resource.instance.total >= tilePurchasePrice && !MapController.instance.InPlantableBounds(tilePointer))
+            if (Input.GetMouseButtonDown(0) && hover_state == HoverState.HOVER && Resource.instance.total >= tilePurchasePrice && !MapController.instance.InPlantableBounds(tilePointer))
             {
                 BuyTile();
             }

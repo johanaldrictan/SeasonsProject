@@ -110,7 +110,7 @@ public class Plant : MonoBehaviour
             pellet.transform.position = shotSpawn.transform.position;
             pellet.GetComponent<Bullet>().SetDamage(2);
             Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-            shootSoundSource.Play();
+            PlayShootSound();
         }
         else if (CheckGoodSeason() && Season.instance.seasonNo == 1)
         {
@@ -132,7 +132,7 @@ public class Plant : MonoBehaviour
             Physics2D.IgnoreCollision(plantCollider, pellet2.GetComponent<Collider2D>());
             pellet2.transform.Rotate(new Vector3(0, 0, -15));
 
-            shootSoundSource.Play();
+            PlayShootSound();
         }
         else if (CheckGoodSeason() && Season.instance.seasonNo == 2)
         {
@@ -141,13 +141,13 @@ public class Plant : MonoBehaviour
             pellet.transform.position = shotSpawn.transform.position;
             pellet.GetComponent<Bullet>().SetDamage(1);
             Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-            shootSoundSource.Play();
+            PlayShootSound();
             yield return new WaitForSeconds(1f);
             GameObject pellet1 = Instantiate(pelletPrefab, shotSpawn.transform.position, shotSpawn.transform.rotation);
             pellet1.transform.position = shotSpawn.transform.position;
             pellet1.GetComponent<Bullet>().SetDamage(1);
             Physics2D.IgnoreCollision(plantCollider, pellet1.GetComponent<Collider2D>());
-            shootSoundSource.Play();
+            PlayShootSound();
         }
         else if (CheckGoodSeason() && Season.instance.seasonNo == 3)
         {
@@ -157,7 +157,7 @@ public class Plant : MonoBehaviour
             pellet.GetComponent<Bullet>().SetDamage(1);
             pellet.GetComponent<Bullet>().SetSeasonAttribute(3);
             Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-            shootSoundSource.Play();
+            PlayShootSound();
         }
         else
         {
@@ -166,7 +166,7 @@ public class Plant : MonoBehaviour
             pellet.transform.position = shotSpawn.transform.position;
             pellet.GetComponent<Bullet>().SetDamage(1);
             Physics2D.IgnoreCollision(plantCollider, pellet.GetComponent<Collider2D>());
-            shootSoundSource.Play();
+            PlayShootSound();
         }
         yield return null;
 
@@ -197,6 +197,13 @@ public class Plant : MonoBehaviour
                 Die();
             }
         }
+    }
+
+    private void PlayShootSound()
+    {
+        shootSoundSource.pitch = Random.Range(.75f, 1f);
+        shootSoundSource.volume = Random.Range(.85f, 1f);
+        shootSoundSource.Play();
     }
 
     public int GetDmg()
