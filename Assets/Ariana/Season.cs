@@ -18,6 +18,8 @@ public class Season : MonoBehaviour
 
     public float seasonLen;
     public string[] seasons;
+
+    public int year;
     private void Awake()
     {
         if(instance == null)
@@ -39,6 +41,8 @@ public class Season : MonoBehaviour
         seasonChimeSource = this.GetComponent<AudioSource>();
         this.seasonChimeSource.clip = this.seasonChimes[this.seasonNo];
         seasonChimeSource.Play();
+
+        year = 1;
     }
 
     // Update is called once per frame
@@ -66,8 +70,12 @@ public class Season : MonoBehaviour
 
     void nextSeason() //cycles to the next season
     {
-        if (this.seasonNo==3)
+        if (this.seasonNo == 3)
+        {
             this.seasonNo = 0;
+            year++;
+            UnityEngine.Debug.Log("Year " + year);
+        }
         else
             ++this.seasonNo;
         this.season = this.seasons[this.seasonNo];
