@@ -710,6 +710,7 @@ MonoBehaviour:
   Canvas: {fileID: 0}
   inEscape: 0
   gameOver: 0
+  inMainMenu: 1
   escape: {fileID: 0}
   endingMusic: {fileID: 0}
 --- !u!114 &1350577433

@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
     public bool inEscape;
     public bool gameOver;
     private bool notPlaying;
+    public bool inMainMenu;
     public GameObject escape;
     public AudioClip endingMusic;
 
@@ -29,7 +30,8 @@ public class Menu : MonoBehaviour
     {
         Time.timeScale = 1;
         scene1 = SceneManager.GetActiveScene();
-        town = GameObject.FindGameObjectWithTag("town").GetComponent<Town>();
+        if (!inMainMenu) 
+            town = GameObject.FindGameObjectWithTag("town").GetComponent<Town>();
         inEscape = false;
         gameOver = false;
         notPlaying = true;
@@ -39,7 +41,10 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkGame();
+        if (!inMainMenu)
+        {
+            checkGame();
+        }
         //Debug.Log(Time.timeScale);
 
         if (Input.GetKeyDown(KeyCode.Escape) && !inEscape && !gameOver)
@@ -80,7 +85,7 @@ public class Menu : MonoBehaviour
     
     public void checkGame()
     {
-        if (town.gameOver || Season.instance.year == 2)
+        if (town.gameOver || Season.instance.year == 3)
         {
             //pause stuff
             Time.timeScale = 0;
@@ -91,7 +96,7 @@ public class Menu : MonoBehaviour
             playAgain.SetActive(true);
             quitGame.SetActive(true);
 
-            if (Season.instance.year == 2)
+            if (Season.instance.year == 3)
             {
                 winner.SetActive(true);
             }
